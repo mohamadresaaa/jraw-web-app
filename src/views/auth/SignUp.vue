@@ -5,19 +5,22 @@
         <v-card class="elevation-1">
           <v-card-text>
             <!-- title -->
-            <h1 class="text-xs-center text-center">Sing in to Jraw</h1>
+            <h1 class="text-xs-center text-center">Sign up to Jraw</h1>
           </v-card-text>
-          <!-- login form -->
+          <!-- register form -->
           <v-form v-model="isFormValid" lazy-validation ref="form" @submit.prevent>
             <v-card-text>
-              <!-- email and username field -->
+              <!-- username field -->
               <v-text-field
-                v-model="email"
-                :rules="emailRules"
-                label="Email or Username"
+                v-model="username"
+                :rules="usernameRules"
+                label="Username"
                 autofocus
                 outlined
               ></v-text-field>
+
+              <!-- email field -->
+              <v-text-field v-model="email" :rules="emailRules" label="Email" outlined></v-text-field>
 
               <!-- password field -->
               <v-text-field
@@ -29,10 +32,6 @@
                 @click:append="showPassword = !showPassword"
                 outlined
               ></v-text-field>
-
-              <p class="font-weight-bold primary--text">
-                <router-link :to="{ name: 'forgot_password' }">Forgot password?</router-link>
-              </p>
             </v-card-text>
             <v-card-actions class="mx-5">
               <v-spacer></v-spacer>
@@ -43,14 +42,14 @@
                 class="text-capitalize white--text"
                 type="submit"
                 block
-              >sign in</v-btn>
+              >sign up</v-btn>
               <v-spacer></v-spacer>
             </v-card-actions>
           </v-form>
           <v-card-text>
-            <p class="font-weight-bold text-xs-center text-center">
-              New to Jraw?
-              <router-link :to="{ name: 'sign_up' }">Create an account</router-link>
+            <p class="font-weight-bold text-xs-center text-center pt-2">
+              Already on Jraw?
+              <router-link :to="{ name: 'sign_in' }">Sign in</router-link>
             </p>
           </v-card-text>
         </v-card>
@@ -66,15 +65,31 @@ a {
 </style>
 
 <script>
+
 export default {
   data () {
     return {
       isFormValid: true,
       showPassword: false,
+      username: "",
       email: "",
       password: "",
-      emailRules: [email => !!email || "Email or Username is required"],
-      passwordRules: [password => !!password || "Password is required"]
+      usernameRules: [
+        username => !!username || "Username is required",
+        username =>
+          username.length >= 5 || "Username must be at least 5 characters"
+      ],
+      emailRules: [
+        email => !!email || "Email is required",
+        email =>
+          /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/.test(email) ||
+          "Email must be valid"
+      ],
+      passwordRules: [
+        password => !!password || "Password is required",
+        password =>
+          password.length >= 8 || "Password must be at least 8 characters"
+      ]
     }
   }
 }

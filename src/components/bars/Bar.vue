@@ -49,7 +49,7 @@
 
       <!-- auth buttons -->
       <div>
-        <v-btn class="mr-2 text-capitalize hidden-sm-and-down" text small>
+        <v-btn @click="pushRoute('sign_up')" class="mr-2 text-capitalize hidden-sm-and-down" text small>
           <span>Sign up</span>
         </v-btn>
 
