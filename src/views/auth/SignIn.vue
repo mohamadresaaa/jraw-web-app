@@ -1,11 +1,11 @@
 <template>
   <v-container fluid fill-height>
     <v-layout align-center justify-center>
-      <v-flex xs12 sm8 md4>
-        <v-card class="elevation-1">
+      <v-flex xs12 sm6 md3>
+        <v-card outlined>
           <v-card-text>
             <!-- title -->
-            <h1 class="text-xs-center text-center">Sing in to Jraw</h1>
+            <h1 class="text-xs-center text-center mt-3">Sing in to Jraw</h1>
           </v-card-text>
           <!-- login form -->
           <v-form v-model="isFormValid" lazy-validation ref="form" @submit.prevent>
@@ -17,6 +17,7 @@
                 label="Email or Username"
                 autofocus
                 outlined
+                dense
               ></v-text-field>
 
               <!-- password field -->
@@ -28,6 +29,7 @@
                 :append-icon="showPassword ? 'visibility' : 'visibility_off'"
                 @click:append="showPassword = !showPassword"
                 outlined
+                dense
               ></v-text-field>
 
               <p class="font-weight-bold primary--text">

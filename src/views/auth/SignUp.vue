@@ -1,11 +1,11 @@
 <template>
   <v-container fluid fill-height>
     <v-layout align-center justify-center>
-      <v-flex xs12 sm8 md4>
-        <v-card class="elevation-1">
+      <v-flex xs12 sm6 md3>
+        <v-card outlined>
           <v-card-text>
             <!-- title -->
-            <h1 class="text-xs-center text-center">Sign up to Jraw</h1>
+            <h1 class="text-xs-center text-center mt-3">Sign up to Jraw</h1>
           </v-card-text>
           <!-- register form -->
           <v-form v-model="isFormValid" lazy-validation ref="form" @submit.prevent>
@@ -15,12 +15,12 @@
                 v-model="username"
                 :rules="usernameRules"
                 label="Username"
-                autofocus
                 outlined
+                dense
               ></v-text-field>
 
               <!-- email field -->
-              <v-text-field v-model="email" :rules="emailRules" label="Email" outlined></v-text-field>
+              <v-text-field v-model="email" :rules="emailRules" label="Email" outlined dense></v-text-field>
 
               <!-- password field -->
               <v-text-field
@@ -31,6 +31,7 @@
                 :append-icon="showPassword ? 'visibility' : 'visibility_off'"
                 @click:append="showPassword = !showPassword"
                 outlined
+                dense
               ></v-text-field>
             </v-card-text>
             <v-card-actions class="mx-5">
