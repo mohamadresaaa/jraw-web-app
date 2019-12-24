@@ -1,24 +1,19 @@
 <template>
   <v-app>
-    <Bar title="jraw" routeTitle="/" />
+    <Bar title="jraw" routeTitle="home" />
     <v-content>
-      <HelloWorld/>
+      <router-view />
     </v-content>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld"
 import Bar from "./components/bars/Bar"
 
 export default {
-  name: "App",
-
   components: {
-    HelloWorld,
     Bar
   },
-
   data: () => ({
     //
   })
