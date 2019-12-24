@@ -53,7 +53,7 @@
           <span>Sign up</span>
         </v-btn>
 
-        <v-btn class="text-capitalize black--text" color="white" small>
+        <v-btn @click="pushRoute('sign_in')" class="text-capitalize black--text" color="white" small>
           <span>Sign in</span>
         </v-btn>
       </div>
@@ -124,6 +124,11 @@ export default {
         path: "/contact"
       }
     ]
-  })
+  }),
+  methods: {
+    pushRoute (name) {
+      this.$router.push({ name })
+    }
+  }
 }
 </script>
