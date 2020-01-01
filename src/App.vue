@@ -1,18 +1,15 @@
 <template>
-  <v-app>
-    <Bar title="jraw" routeTitle="home" />
-    <v-content>
-      <router-view />
-    </v-content>
-  </v-app>
+  <v-content>
+    <router-view />
+  </v-content>
 </template>
 
 <script>
-import Bar from "./components/bars/Bar"
+// import Bar from "./components/bars/Bar"
 
 export default {
   components: {
-    Bar
+    // Bar
   },
   data: () => ({
     //
