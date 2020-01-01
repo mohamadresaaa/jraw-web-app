@@ -33,7 +33,7 @@
               ></v-text-field>
 
               <p class="font-weight-bold primary--text">
-                <router-link :to="{ name: 'forgot_password' }">Forgot password?</router-link>
+                <router-link :to="{ name: 'reset_password' }">Forgot password?</router-link>
               </p>
             </v-card-text>
             <v-card-actions class="mx-5">
