@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import Bar from "./../../components/bars/Bar"
+import Bar from "./../../components/Bar"
 
 export default {
   components: {
