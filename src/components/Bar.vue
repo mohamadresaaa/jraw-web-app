@@ -44,16 +44,16 @@
 
       <v-spacer></v-spacer>
 
+      <v-text-field class="hidden-sm-and-down" label="Search..." solo-inverted flat hide-details dense />
+
       <!-- account menu -->
+      <UserMenu v-if="user" />
 
       <!-- auth buttons and search field -->
-      <div v-if="!panel">
-        <v-text-field class="hidden-sm-and-down" label="Search..." solo-inverted flat hide-details dense />
-
+      <div v-else>
         <v-btn @click="pushRoute('sign_up')" class="mr-2 text-capitalize hidden-sm-and-down" text small>
           <span>Sign up</span>
         </v-btn>
-
         <v-btn @click="pushRoute('sign_in')" class="text-capitalize black--text" color="white" small>
           <span>Sign in</span>
         </v-btn>
@@ -69,6 +69,8 @@ a {
 </style>
 
 <script>
+import UserMenu from "../components/UserMenu"
+
 export default {
   props: {
     toolbarTitle: {
@@ -126,6 +128,9 @@ export default {
     pushRoute (name) {
       this.$router.push({ name })
     }
+  },
+  components: {
+    UserMenu
   }
 }
 </script>
