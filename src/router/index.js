@@ -47,6 +47,18 @@ const routes = [
         component: () => import("../views/auth/ResetPassword.vue")
       }
     ]
+  },
+  {
+    path: "/user",
+    component: () => import("../views/layout/Panel.vue"),
+    redirect: "/user/panel",
+    children: [
+      {
+        path: "panel",
+        name: "userPanel",
+        component: () => import("../views/Dashboard.vue")
+      }
+    ]
   }
 ]
 

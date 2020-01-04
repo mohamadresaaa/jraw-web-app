@@ -44,11 +44,12 @@
 
       <v-spacer></v-spacer>
 
-      <v-text-field class="hidden-sm-and-down" label="Search..." solo-inverted flat hide-details dense />
       <!-- account menu -->
 
-      <!-- auth buttons -->
+      <!-- auth buttons and search field -->
       <div v-if="!panel">
+        <v-text-field class="hidden-sm-and-down" label="Search..." solo-inverted flat hide-details dense />
+
         <v-btn @click="pushRoute('sign_up')" class="mr-2 text-capitalize hidden-sm-and-down" text small>
           <span>Sign up</span>
         </v-btn>
