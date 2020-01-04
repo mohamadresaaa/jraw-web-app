@@ -1,7 +1,7 @@
 <template>
   <v-app>
-    <Bar :toolbarTitle="{ text: 'jraw', path: 'home' }" />
-    <v-content>
+    <Bar :toolbarTitle="{ text: 'jpanel', path: 'panel' }" panel />
+    <v-content class="pa-0 ma-2">
       <router-view />
     </v-content>
   </v-app>

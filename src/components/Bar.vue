@@ -28,9 +28,9 @@
 
       <!-- toolbar title -->
       <v-toolbar-title class="headline text-uppercase mr-5">
-        <router-link :to="{ name: routeTitle }" class="white--text">
-          <span class="font-weight-bold">{{ title[0] }}</span>
-          <span class="font-weight-light">{{ title.slice(1) }}</span>
+        <router-link :to="{ name: toolbarTitle.path }" class="white--text">
+          <span class="font-weight-bold">{{ toolbarTitle.text[0] }}</span>
+          <span class="font-weight-light">{{ toolbarTitle.text.slice(1) }}</span>
         </router-link>
       </v-toolbar-title>
 
@@ -48,7 +48,7 @@
       <!-- account menu -->
 
       <!-- auth buttons -->
-      <div>
+      <div v-if="!panel">
         <v-btn @click="pushRoute('sign_up')" class="mr-2 text-capitalize hidden-sm-and-down" text small>
           <span>Sign up</span>
         </v-btn>
@@ -70,12 +70,8 @@ a {
 <script>
 export default {
   props: {
-    title: {
-      type: String,
-      required: true
-    },
-    routeTitle: {
-      type: String,
+    toolbarTitle: {
+      type: Object,
       required: true
     },
     panel: {
