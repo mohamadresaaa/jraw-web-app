@@ -59,6 +59,19 @@ const routes = [
         component: () => import("../views/Dashboard.vue")
       }
     ]
+  },
+  {
+    path: "/404",
+    component: () => import("../views/ErrorPage.vue"),
+    props: {
+      title: "Oops!",
+      message: "We can't find the page you're looking for.Try searching our posts",
+      color: "secondary"
+    }
+  },
+  {
+    path: "*",
+    redirect: "/404"
   }
 ]
 
