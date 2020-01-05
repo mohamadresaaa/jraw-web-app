@@ -56,7 +56,7 @@ const routes = [
       {
         path: "panel",
         name: "userPanel",
-        component: () => import("../views/Dashboard.vue")
+        component: () => import("../views/user/Profile.vue")
       }
     ]
   },
