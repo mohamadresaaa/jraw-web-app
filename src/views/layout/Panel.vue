@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <Bar :toolbarTitle="{ text: 'jpanel', path: 'panel' }" panel />
+    <PanelBar />
     <v-content class="pa-0 ma-2">
       <router-view />
     </v-content>
@@ -8,11 +8,11 @@
 </template>
 
 <script>
-import Bar from "./../../components/Bar"
+import PanelBar from "./../../components/bars/PanelBar"
 
 export default {
   components: {
-    Bar
+    PanelBar
   },
   data: () => ({
     //

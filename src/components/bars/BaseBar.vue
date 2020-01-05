@@ -16,27 +16,21 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-    <v-app-bar
-      :clipped-left="$vuetify.breakpoint.lgAndUp"
-      color="rgba(45,45,45,0.98)"
-      dark
-      app
-      fixed
-    >
+    <v-app-bar :clipped-left="$vuetify.breakpoint.lgAndUp" color="rgba(45,45,45,0.98)" dark app fixed>
       <!-- navbar icon button -->
-      <v-app-bar-nav-icon @click="drawer = !drawer" :class="`${ panel ? '' : 'hidden-md-and-up' }`"></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon @click="drawer = !drawer" class="hidden-md-and-up"></v-app-bar-nav-icon>
 
       <!-- toolbar title -->
       <v-toolbar-title class="headline text-uppercase mr-5">
-        <router-link :to="{ name: toolbarTitle.path }" class="white--text">
-          <span class="font-weight-bold">{{ toolbarTitle.text[0] }}</span>
-          <span class="font-weight-light">{{ toolbarTitle.text.slice(1) }}</span>
+        <router-link :to="{ name: 'home' }" class="white--text">
+          <span class="font-weight-bold">j</span>
+          <span class="font-weight-light">raw</span>
         </router-link>
       </v-toolbar-title>
 
       <!-- items of toolbar -->
       <v-toolbar-items v-for="(item, index) in toolbarItems" :key="index">
-        <v-btn v-if="!panel" class="text-capitalize hidden-sm-and-down" :to="item.path" text>{{ item.text }}</v-btn>
+        <v-btn class="text-capitalize hidden-sm-and-down" :to="item.path" text>{{ item.text }}</v-btn>
       </v-toolbar-items>
 
       <!-- toolbar spinner -->
@@ -44,10 +38,10 @@
 
       <v-spacer></v-spacer>
 
-      <v-text-field class="hidden-sm-and-down" label="Search..." solo-inverted flat hide-details dense />
+      <v-text-field class="hidden-sm-and-down mr-5" label="Search..." solo-inverted flat hide-details dense />
 
       <!-- account menu -->
-      <UserMenu v-if="user" />
+      <UserMenu v-if="user" :user="user" />
 
       <!-- auth buttons and search field -->
       <div v-else>
@@ -63,74 +57,72 @@
 </template>
 
 <style>
-a {
-  text-decoration: none;
-}
+  a {
+    text-decoration: none;
+  }
+
 </style>
 
 <script>
-import UserMenu from "../components/UserMenu"
+import UserMenu from "../../components/UserMenu"
 
 export default {
-  props: {
-    toolbarTitle: {
-      type: Object,
-      required: true
-    },
-    panel: {
-      type: Boolean
-    }
-  },
   data: () => ({
     drawer: false,
     menu: false,
-    drawerItems: [
-      {
-        icon: "home",
-        text: "Home",
-        path: "/"
-      },
-      {
-        icon: "library_books",
-        text: "Blog",
-        path: "/blog"
-      },
-      {
-        icon: "people",
-        text: "About us",
-        path: "/about"
-      },
-      {
-        icon: "chat_bubble",
-        text: "Contact us",
-        path: "/contact"
-      }
+    drawerItems: [{
+      icon: "home",
+      text: "Home",
+      path: "/"
+    },
+    {
+      icon: "library_books",
+      text: "Blog",
+      path: "/blog"
+    },
+    {
+      icon: "people",
+      text: "About us",
+      path: "/about"
+    },
+    {
+      icon: "chat_bubble",
+      text: "Contact us",
+      path: "/contact"
+    }
     ],
-    toolbarItems: [
-      {
-        icon: "library_books",
-        text: "Blog",
-        path: "/blog"
-      },
-      {
-        icon: "people",
-        text: "About us",
-        path: "/about"
-      },
-      {
-        icon: "chat_bubble",
-        text: "Contact us",
-        path: "/contact"
-      }
-    ]
+    toolbarItems: [{
+      icon: "library_books",
+      text: "Blog",
+      path: "/blog"
+    },
+    {
+      icon: "people",
+      text: "About us",
+      path: "/about"
+    },
+    {
+      icon: "chat_bubble",
+      text: "Contact us",
+      path: "/contact"
+    }
+    ],
+    user: {
+      username: "mohamadresaaa",
+      avatar: "https://avatars3.githubusercontent.com/u/41260098?s=460&v=4",
+      role: ["user", "admin"]
+    }
   }),
   methods: {
     pushRoute (name) {
-      this.$router.push({ name })
+      this.$router.push({
+        name
+      })
     }
   },
   components: {
     UserMenu
   }
 }
+
 </script>

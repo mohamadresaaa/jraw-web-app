@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <Bar :toolbarTitle="{ text: 'jraw', path: 'home' }" />
+    <BaseBar />
     <v-content>
       <router-view />
     </v-content>
@@ -8,11 +8,11 @@
 </template>
 
 <script>
-import Bar from "./../../components/Bar"
+import BaseBar from "./../../components/bars/BaseBar"
 
 export default {
   components: {
-    Bar
+    BaseBar
   },
   data: () => ({
     //
