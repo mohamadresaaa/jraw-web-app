@@ -3,7 +3,7 @@
         <v-layout row wrap justify-center class="mb-3">
             <!-- count data  -->
             <v-flex xs6 sm6 md3 lg3 v-for="(item, index) in counterDate" :key="index">
-                <v-card :class="`pa-2 ${$vuetify.breakpoint.mdAndDown ? 'ma-4' : 'mx-4'}`">
+                <v-card :class="`pa-2 ${$vuetify.breakpoint.mdAndDown ? 'ma-4' : 'mx-4'}`" outlined>
                     <v-card-actions>
                         <v-list-item-content>
                             <v-list-item-title class="headline font-weight-bold text-capitalize">{{ item.title }}:
@@ -18,7 +18,7 @@
             <v-flex xs12 sm12 md12 lg12>
                 <v-layout wrap>
                     <v-flex xs12 sm12 md6 lg6>
-                        <v-card :class="`pa-2 ${$vuetify.breakpoint.mdAndDown ? 'ma-4' : 'mx-4'}`">
+                        <v-card :class="`pa-2 ${$vuetify.breakpoint.mdAndDown ? 'ma-4' : 'mx-4'}`" outlined>
                             <!-- avatar -->
                             <v-responsive class="pa-3">
                                 <v-avatar size="200" class="blue lighten-2">
@@ -48,7 +48,7 @@
                         </v-card>
                     </v-flex>
                     <v-flex xs12 sm12 md6 lg6>
-                        <v-card :class="`pa-2 ${$vuetify.breakpoint.mdAndDown ? 'ma-4' : 'mx-4'}`">
+                        <v-card :class="`pa-2 ${$vuetify.breakpoint.mdAndDown ? 'ma-4' : 'mx-4'}`" outlined>
                             <!-- bio -->
                             <v-card-text>
                                 <v-card-title class="headline">
