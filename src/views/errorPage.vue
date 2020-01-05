@@ -12,7 +12,7 @@
             </v-card-text>
             <v-card-actions class="mx-5">
               <v-spacer></v-spacer>
-              <v-btn :to="{ name: 'home' }" color="primary" class="text-capitalize white--text" outlined>
+              <v-btn :to="{ name: 'home' }" :color="color" class="text-capitalize white--text" outlined>
                 <span class="ml-2">back to home</span>
                 <v-icon right>keyboard_arrow_right</v-icon>
               </v-btn>
