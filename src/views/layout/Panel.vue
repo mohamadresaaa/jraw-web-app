@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import PanelBar from "./../../components/bars/PanelBar"
+import PanelBar from "./../../components/header/bars/PanelBar"
 
 export default {
   components: {

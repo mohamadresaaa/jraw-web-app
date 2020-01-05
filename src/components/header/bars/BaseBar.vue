@@ -64,7 +64,7 @@
 </style>
 
 <script>
-import UserMenu from "../../components/UserMenu"
+import UserMenu from "../../header/UserMenu"
 
 export default {
   data: () => ({

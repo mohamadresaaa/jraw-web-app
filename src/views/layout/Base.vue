@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import BaseBar from "./../../components/bars/BaseBar"
+import BaseBar from "./../../components/header/bars/BaseBar"
 
 export default {
   components: {
