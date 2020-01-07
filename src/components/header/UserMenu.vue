@@ -31,7 +31,7 @@
       <v-divider></v-divider>
       <v-list>
         <!-- dashboard link -->
-        <v-list-item>
+        <v-list-item to="/user/panel">
           <v-list-item-action>
             <v-icon>dashboard</v-icon>
           </v-list-item-action>

@@ -57,6 +57,11 @@ const routes = [
         path: "panel",
         name: "user_panel",
         component: () => import("../views/user/Profile.vue")
+      },
+      {
+        path: "change_password",
+        name: "change_password",
+        component: () => import("../views/user/ChangePassword.vue")
       }
     ]
   },
