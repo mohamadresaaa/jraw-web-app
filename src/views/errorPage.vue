@@ -1,9 +1,9 @@
 <template>
-  <v-app>
+  <v-app style="background-color:#fff;">
     <v-container fluid fill-height>
       <v-layout align-center justify-center>
         <v-flex xs12 sm12 md12>
-          <v-card color="#fafafa" elevation="0">
+          <v-card elevation="0">
             <v-card-text class="text-xs-center text-center">
               <h1 :class="`error-title ${color}--text display-3 font-weight-bold`">{{ title }}</h1>
               <blockquote class="blockquote">

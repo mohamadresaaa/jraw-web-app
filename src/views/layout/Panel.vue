@@ -1,8 +1,10 @@
 <template>
-  <v-app>
+  <v-app style="background-color: #fff;">
     <PanelBar />
-    <v-content class="pa-0 ma-2">
-      <router-view />
+    <v-content class="pa-0">
+      <v-container fluid>
+        <router-view />
+      </v-container>
     </v-content>
   </v-app>
 </template>

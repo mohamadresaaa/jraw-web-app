@@ -8,12 +8,12 @@
         <UserListItem />
       </v-list>
     </v-navigation-drawer>
-    <v-app-bar :clipped-left="$vuetify.breakpoint.lgAndUp" color="rgba(45,45,45,0.98)" dark app fixed dense>
+    <v-app-bar :clipped-left="$vuetify.breakpoint.lgAndUp" color="rgba(45,45,45,0.98)" dark dense>
       <!-- navbar icon button -->
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
 
       <!-- toolbar title -->
-      <v-toolbar-title class="headline text-uppercase mr-5">
+      <v-toolbar-title class="headline text-capitalize mr-5">
         <router-link to="/user/panel" class="white--text">
           <span class="font-weight-bold">J</span>
           <span class="font-weight-light">Panel</span>

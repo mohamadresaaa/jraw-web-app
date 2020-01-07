@@ -1,6 +1,5 @@
 <template>
-  <v-card>
-    <v-container>
+  <v-container>
       <v-layout wrap>
         <!-- title -->
         <v-flex xs12 sm12 md12>
@@ -31,7 +30,6 @@
         </v-flex>
       </v-layout>
     </v-container>
-  </v-card>
 </template>
 
 <script>
