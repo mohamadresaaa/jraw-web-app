@@ -3,17 +3,9 @@
     <v-navigation-drawer v-model="drawer" :clipped="$vuetify.breakpoint.lgAndUp" fixed app>
       <v-list dense>
         <!-- items of drawer -->
-        <v-list-item v-for="(item, index) in drawerItems" :key="index" :to="item.path" link>
-          <!-- icon -->
-          <v-list-item-icon>
-            <v-icon>{{ item.icon }}</v-icon>
-          </v-list-item-icon>
-
-          <!-- title -->
-          <v-list-item-content>
-            <v-list-item-title>{{ item.text }}</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
+        <ToolsListItem />
+        <v-divider />
+        <UserListItem />
       </v-list>
     </v-navigation-drawer>
     <v-app-bar :clipped-left="$vuetify.breakpoint.lgAndUp" color="rgba(45,45,45,0.98)" dark app fixed dense>
@@ -48,46 +40,28 @@
 
 <script>
 import UserMenu from "../../header/UserMenu"
+import UserListItem from "../listItems/UserListItem"
+import ToolsListItem from "../listItems/ToolsListItem"
 
 export default {
   data: () => ({
     drawer: false,
     menu: false,
-    drawerItems: [{
-      icon: "home",
-      text: "Home",
-      path: "/"
+    items: [{
+      text: "Notes",
+      routeName: "notes"
     },
     {
-      icon: "library_books",
-      text: "Blog",
-      path: "/blog"
+      text: "Contacts",
+      routeName: "contacts"
     },
     {
-      icon: "people",
-      text: "About us",
-      path: "/about"
+      text: "Posts",
+      routeName: "posts"
     },
     {
-      icon: "chat_bubble",
-      text: "Contact us",
-      path: "/contact"
-    }
-    ],
-    toolbarItems: [{
-      icon: "library_books",
-      text: "Blog",
-      path: "/blog"
-    },
-    {
-      icon: "people",
-      text: "About us",
-      path: "/about"
-    },
-    {
-      icon: "chat_bubble",
-      text: "Contact us",
-      path: "/contact"
+      text: "Events",
+      routeName: "events"
     }
     ],
     user: {
@@ -104,7 +78,9 @@ export default {
     }
   },
   components: {
-    UserMenu
+    UserMenu,
+    UserListItem,
+    ToolsListItem
   }
 }
 

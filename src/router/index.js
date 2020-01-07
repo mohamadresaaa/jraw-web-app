@@ -55,13 +55,14 @@ const routes = [
     children: [
       {
         path: "panel",
-        name: "userPanel",
+        name: "user_panel",
         component: () => import("../views/user/Profile.vue")
       }
     ]
   },
   {
     path: "/404",
+    name: "not_found",
     component: () => import("../views/ErrorPage.vue"),
     props: {
       title: "Oops!",
