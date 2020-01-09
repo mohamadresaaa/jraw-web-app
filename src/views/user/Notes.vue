@@ -43,32 +43,17 @@
         </v-card-title>
       </v-flex>
       <v-flex xs12 sm12 md12>
-        <v-tooltip color="blue accent-1" bottom>
-          <template v-slot:activator="{ on }">
-            <v-btn v-on="on" @click="sortBy('title')" color="grey" class="pl-0" text >
-              <v-icon small left>note_add</v-icon>
-              <span class="caption text-capitalize">create</span>
-            </v-btn>
-          </template>
-          <span>Create new note</span>
-        </v-tooltip>
-        <v-tooltip color="blue accent-1" bottom>
-          <template v-slot:activator="{ on }">
-            <v-btn v-on="on" @click="sortBy('title')" text color="grey">
-              <v-icon small left>sort_by_alpha</v-icon>
-              <span class="caption text-capitalize">sort</span>
-            </v-btn>
-          </template>
-          <span>Sort by title of note</span>
-        </v-tooltip>
-        <v-tooltip color="blue accent-1" bottom>
-          <template v-slot:activator="{ on }">
-            <v-btn disabled v-on="on" text color="grey">
-              <span class="caption text-capitalize">Total ({{ "6" }})</span>
-            </v-btn>
-          </template>
-          <span>Number of notes</span>
-        </v-tooltip>
+        <v-btn @click="sortBy('title')" color="grey darken-1" text>
+          <v-icon small left>note_add</v-icon>
+          <span class="caption text-capitalize">create</span>
+        </v-btn>
+        <v-btn @click="sortBy('title')" color="grey darken-1" text>
+          <v-icon small left>sort_by_alpha</v-icon>
+          <span class="caption text-capitalize">sort</span>
+        </v-btn>
+        <v-btn color="grey" disabled text>
+          <span class="caption text-capitalize">Total ({{ "6" }})</span>
+        </v-btn>
       </v-flex>
 
       <v-flex xs12 sm12 md12>
