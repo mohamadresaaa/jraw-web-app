@@ -19,7 +19,7 @@ export default {
     return {
       items: [{
         text: "Notes",
-        icon: "note",
+        icon: "notes",
         path: "notes"
       },
       {
