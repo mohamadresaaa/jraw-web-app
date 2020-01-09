@@ -3,13 +3,13 @@
     <v-layout wrap>
       <!-- title -->
       <v-flex xs12 sm12 md12>
-        <v-card-title>
+        <v-card-title class="pl-0 ml-0 mb-4">
           <h3 class="font-weight-medium text-capitalize">Edit profile</h3>
         </v-card-title>
       </v-flex>
       <v-flex xs12 sm3>
         <!-- avatar -->
-        <v-responsive class="mx-2">
+        <v-responsive class="mx-0">
           <v-avatar tile size="185" class="blue lighten-2">
             <!-- <div v-if="!user.avatar" class="title text-truncate white--text">
                                     {{ user.username }}
@@ -21,11 +21,11 @@
 
         <!-- input avatar upload  -->
         <input ref="fileInput" style="display:none" type="file">
-        <v-btn @click="$refs.fileInput.click()" color="blue darken-1" class="text-capitalize white--text ml-2 my-2"
-          :style="`${false ? '' : 'width: 185px;' }`" outlined>
+        <v-btn @click="$refs.fileInput.click()" color="blue darken-1" class="text-capitalize white--text mr-2 my-2"
+          >
           upload
         </v-btn>
-        <v-btn color="red darken-1" class="text-capitalize white--text ml-2 my-2" outlined>
+        <v-btn color="red darken-1" class="text-capitalize white--text my-2" outlined>
           remove
         </v-btn>
       </v-flex>
@@ -34,10 +34,10 @@
         <v-form @submit.prevent="">
           <!-- full name -->
           <v-row>
-            <v-col cols="12" md="6">
+            <v-col cols="12" md="6" class="mt-0 pt-0">
               <v-text-field label="First name" outlined dense></v-text-field>
             </v-col>
-            <v-col cols="12" md="6">
+            <v-col cols="12" md="6" class="mt-0 pt-0">
               <v-text-field label="Last name" outlined dense></v-text-field>
             </v-col>
           </v-row>

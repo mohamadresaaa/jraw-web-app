@@ -2,12 +2,12 @@
   <v-container>
     <v-layout wrap>
       <v-flex xs12 sm12 md12>
-        <v-card-title>
+        <v-card-title class="pl-0 ml-0 mb-4">
           <h3 class="font-weight-medium text-capitalize">notes</h3>
           <v-spacer></v-spacer>
           <v-dialog v-model="dialog" persistent max-width="500px">
             <template v-slot:activator="{ on }">
-              <v-btn color="primary" dark class="text-capitalize" v-on="on">create</v-btn>
+              <!-- <v-btn color="primary" dark class="text-capitalize" v-on="on">create</v-btn> -->
             </template>
             <v-card>
               <v-form v-model="isFormValid" lazy-validation ref="form">
@@ -45,7 +45,7 @@
       <v-flex xs12 sm12 md12>
         <v-tooltip color="blue accent-1" bottom>
           <template v-slot:activator="{ on }">
-            <v-btn v-on="on" @click="sortBy('title')" text color="grey">
+            <v-btn v-on="on" @click="sortBy('title')" color="grey" class="pl-0" text >
               <v-icon small left>note_add</v-icon>
               <span class="caption text-capitalize">create</span>
             </v-btn>
