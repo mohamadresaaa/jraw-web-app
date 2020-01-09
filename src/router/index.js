@@ -72,6 +72,16 @@ const routes = [
         path: "notes",
         name: "notes",
         component: () => import("../views/user/Notes.vue")
+      },
+      {
+        path: "events",
+        name: "events",
+        component: () => import("../views/ErrorPage.vue"),
+        props: {
+          title: "Coming soon...",
+          message: "The event feature will soon be added to the jraw",
+          color: "primary"
+        }
       }
     ]
   },
