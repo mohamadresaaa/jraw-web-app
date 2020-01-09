@@ -23,7 +23,7 @@
             <!-- confirm new password field -->
             <v-text-field v-model="newConfirmPassword" :rules="newConfirmPasswordRules" label="Confirm new password"
               type="password" outlined dense></v-text-field>
-            <v-btn color="green" class="ml-0 text-capitalize white--text" type="submit" outlined>
+            <v-btn @click="test()" color="green" class="ml-0 text-capitalize white--text" type="submit" outlined>
               Change password
             </v-btn>
           </v-form>
@@ -55,7 +55,9 @@ export default {
     }
   },
   methods: {
-
+    test () {
+      console.log(window.document)
+    }
   }
 }
 
