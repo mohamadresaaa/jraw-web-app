@@ -91,10 +91,10 @@
             <v-flex xs6 sm6 md3 class="text-center text-xs-center">
               <div v-show="!$vuetify.breakpoint.smAndDown" class="caption grey--text">Actions</div>
               <div :class="`${ $vuetify.breakpoint.smAndDown ? '' : 'mt-2' }`">
-                <v-btn @click="editItem(item)" icon dark small color="primary">
+                <v-btn @click="editItem(item)" color="primary" icon dark>
                   <v-icon dark>edit</v-icon>
                 </v-btn>
-                <v-btn icon dark small @click="deleteItem(item)" color="red">
+                <v-btn @click="deleteItem(item)" color="red" icon dark>
                   <v-icon dark>delete</v-icon>
                 </v-btn>
               </div>
