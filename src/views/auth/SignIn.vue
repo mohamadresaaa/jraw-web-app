@@ -5,7 +5,7 @@
         <v-card outlined>
           <v-card-text>
             <!-- title -->
-            <h1 class="text-xs-center text-center mt-3">Sing in to Jraw</h1>
+            <h1 class="text-xs-center text-center mt-3 black--text">Sing in to Jraw</h1>
           </v-card-text>
           <!-- login form -->
           <v-form v-model="isFormValid" lazy-validation ref="form" @submit.prevent>

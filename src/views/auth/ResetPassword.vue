@@ -5,7 +5,7 @@
         <v-card v-if="!this.$route.params.code" outlined>
           <v-card-text>
             <!-- title -->
-            <h1 class="text-center text-center mt-5">Reset your password</h1>
+            <h1 class="text-center text-center mt-5 black--text">Reset your password</h1>
           </v-card-text>
           <!-- forgot password form -->
           <v-form v-model="isFormValid" lazy-validation ref="form" @submit.prevent>
@@ -28,13 +28,11 @@
 
         <v-card v-else outlined>
           <v-card-text class="text-center text-center">
-            <v-avatar color="blue accent-4" size="100">
-              <img src="https://avatars2.githubusercontent.com/u/41260098?s=400&v=4" alt="mohamadresaaa">
-              <!-- <span class="white--text headline">80</span> -->
-            </v-avatar>
+            <h1 class="text-center text-center mt-5 black--text">Reset password</h1>
             <v-spacer></v-spacer>
-            <v-chip class="mt-5 subtitle-2" text-color="blue accent-4" label pill outlined>
-              mohamadresaaa
+            <v-chip class="mt-5" label close small>
+              <v-icon left size="18">account_circle</v-icon>
+              mohamadresaaa@gmail.com
             </v-chip>
           </v-card-text>
           <!-- reset password form -->
