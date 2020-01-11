@@ -4,7 +4,7 @@
       <!-- title -->
       <v-flex xs12 sm12 md12>
         <v-card-title class="pl-0 ml-0 mb-4">
-          <h3 class="font-weight-medium text-capitalize">users</h3>
+          <h3 class="font-weight-medium text-capitalize">blocked users</h3>
         </v-card-title>
       </v-flex>
       <v-flex xs12 sm12 md12>
@@ -16,31 +16,23 @@
             <thead>
               <tr>
                 <th class="text-left">Username</th>
-                <th class="text-left">Roles</th>
+                <th class="text-left">Email</th>
                 <th>Actions</th>
               </tr>
             </thead>
             <tbody>
               <tr v-for="item in users" :key="item.name">
                 <td>{{ item.username }}</td>
-                <td>
-                  <v-chip v-for="(role, index) in item.roles" :key="index" class="mr-2" label
-                    :small="$vuetify.breakpoint.mdAndUp" :x-small="$vuetify.breakpoint.smAndDown">
-                    {{ role }}
-                  </v-chip>
-                </td>
+                <td>{{ item.email }}</td>
                 <td>
                   <div v-if="$vuetify.breakpoint.mdAndUp">
-                    <v-btn color="primary" x-small icon dark>
-                      <v-icon dark>security</v-icon>
-                    </v-btn>
                     <v-divider class="mx-1" light inset vertical></v-divider>
                     <v-btn color="black" x-small icon dark>
                       <v-icon dark>visibility</v-icon>
                     </v-btn>
                     <v-divider class="mx-1" inset vertical></v-divider>
-                    <v-btn color="red" x-small icon dark>
-                      <v-icon dark>block</v-icon>
+                    <v-btn color="primary" x-small icon dark>
+                      <v-icon dark>lock_open</v-icon>
                     </v-btn>
                   </div>
                   <v-menu v-else bottom left>
@@ -52,14 +44,6 @@
                     <v-list class="body-2">
                       <v-list-item>
                         <v-list-item-action>
-                          <v-icon>security</v-icon>
-                        </v-list-item-action>
-                        <v-list-item-content>
-                          Change access level
-                        </v-list-item-content>
-                      </v-list-item>
-                      <v-list-item>
-                        <v-list-item-action>
                           <v-icon>visibility</v-icon>
                         </v-list-item-action>
                         <v-list-item-content>
@@ -68,10 +52,10 @@
                       </v-list-item>
                       <v-list-item>
                         <v-list-item-action>
-                          <v-icon>block</v-icon>
+                          <v-icon>lock_open</v-icon>
                         </v-list-item-action>
                         <v-list-item-content>
-                          Block this user
+                          Unblock this user
                         </v-list-item-content>
                       </v-list-item>
                     </v-list>
@@ -92,31 +76,31 @@ export default {
     return {
       users: [{
         username: "mohamadresaaa",
-        roles: ["admin", "user"]
+        email: "mohamadresaaa@gmail.com"
       },
       {
         username: "irann_1",
-        roles: ["user"]
+        email: "mohamadresaaa@gmail.com"
       },
       {
         username: "mosalli4738",
-        roles: ["user"]
+        email: "mohamadresaaa@gmail.com"
       },
       {
         username: "irann_1",
-        roles: ["user"]
+        email: "mohamadresaaa@gmail.com"
       },
       {
         username: "mosalli4738",
-        roles: ["user"]
+        email: "mohamadresaaa@gmail.com"
       },
       {
         username: "irann_1",
-        roles: ["user"]
+        email: "mohamadresaaa@gmail.com"
       },
       {
         username: "mosalli4738",
-        roles: ["user"]
+        email: "mohamadresaaa@gmail.com"
       }
       ]
     }
