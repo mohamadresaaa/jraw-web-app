@@ -3,8 +3,10 @@
     <v-layout wrap>
       <!-- title -->
       <v-flex xs12 sm12 md12>
-        <v-card-title class="pl-0 ml-0 mb-4">
+        <v-card-title class="px-0 mx-0 mb-4">
           <h3 class="font-weight-medium text-capitalize">users</h3>
+          <v-spacer></v-spacer>
+          <Count :limit=8 :total="users.length" />
         </v-card-title>
       </v-flex>
       <v-flex xs12 sm12 md12>
@@ -81,18 +83,28 @@
             </tbody>
           </template>
         </v-simple-table>
+        <div class="text-center my-5">
+          <v-pagination v-model="page" :length="15" :total-visible="7"></v-pagination>
+        </div>
       </v-flex>
     </v-layout>
   </v-container>
 </template>
 
 <script>
+import Count from "../../components/Count"
+
 export default {
   data () {
     return {
+      page: 1,
       users: [{
         username: "mohamadresaaa",
         roles: ["admin", "user"]
+      },
+      {
+        username: "mosalli4738",
+        roles: ["user"]
       },
       {
         username: "irann_1",
@@ -120,7 +132,9 @@ export default {
       }
       ]
     }
+  },
+  components: {
+    Count
   }
 }
-
 </script>
