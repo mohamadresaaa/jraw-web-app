@@ -92,7 +92,7 @@
 </template>
 
 <script>
-import Count from "../../components/Count"
+import Count from "../../../components/Count"
 
 export default {
   data () {

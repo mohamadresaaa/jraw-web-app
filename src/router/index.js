@@ -107,7 +107,7 @@ const routes = [
       {
         path: "users",
         name: "users",
-        component: () => import("../views/admin/Users.vue")
+        component: () => import("../views/admin/user/List.vue")
       },
       {
         path: "blocked_users",
