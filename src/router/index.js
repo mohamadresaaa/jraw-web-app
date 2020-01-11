@@ -96,6 +96,22 @@ const routes = [
     ]
   },
   {
+    path: "/admin",
+    component: () => import("../views/layout/Panel.vue"),
+    redirect: "/admin/panel",
+    children: [
+      {
+        path: "panel",
+        name: "admin_panel"
+      },
+      {
+        path: "users",
+        name: "users",
+        component: () => import("../views/admin/Users.vue")
+      }
+    ]
+  },
+  {
     path: "/404",
     name: "not_found",
     component: () => import("../views/ErrorPage.vue"),
