@@ -13,7 +13,7 @@
         <v-text-field label="Search..." clearable solo-inverted dense></v-text-field>
       </v-flex>
       <v-flex xs12 sm12 md12>
-        <v-simple-table :dark=$switchMode()>
+        <v-simple-table>
           <template v-slot:default>
             <thead>
               <tr>

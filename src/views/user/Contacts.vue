@@ -11,7 +11,7 @@
       <v-flex xs12 sm12 md12>
         <v-layout wrap>
           <v-flex xs12 sm6 md4 lg3 v-for="(contact, index) in contacts" :key="index">
-            <v-card :dark=$switchMode() class="text-center text-xs-center ma-2" outlined>
+            <v-card class="text-center text-xs-center ma-2" outlined>
               <v-responsive class="pa-3">
                 <v-avatar size="100" class="grey lighten-2">
                   <img :src="contact.image" :alt="contact.name">

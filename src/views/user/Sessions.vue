@@ -7,7 +7,7 @@
         </v-card-title>
       </v-flex>
       <v-flex xs12 sm12 md3 v-for="(item, index) in 4" :key="index" class="pa-1">
-        <v-card :dark=$switchMode() outlined tile>
+        <v-card outlined tile>
           <v-layout wrap class="pa-3">
             <v-flex xs3 sm2 md3>
               <div :class="`mt-5 ${$vuetify.breakpoint.sm ? 'ml-5' : ''}`">

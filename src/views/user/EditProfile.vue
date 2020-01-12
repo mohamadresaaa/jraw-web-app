@@ -46,7 +46,7 @@
 
           <!-- birthday -->
           <v-menu ref="menu" v-model="menu" :close-on-content-click="false" :nudge-right="40"
-            transition="scale-transition" offset-y full-width min-width="290px">
+            transition="scale-transition" offset-y min-width="290px">
             <template v-slot:activator="{ on }">
               <v-text-field label="Birthday" prepend-inner-icon="event" readonly v-on="on" outlined dense>
               </v-text-field>

@@ -51,9 +51,6 @@
           <v-icon small left>sort_by_alpha</v-icon>
           <span class="caption text-capitalize">sort</span>
         </v-btn>
-        <v-btn color="grey" disabled text>
-          <span class="caption text-capitalize">Total ({{ "6" }})</span>
-        </v-btn>
       </v-flex>
 
       <v-flex xs12 sm12 md12>

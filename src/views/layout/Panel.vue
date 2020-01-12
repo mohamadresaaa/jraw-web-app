@@ -1,5 +1,5 @@
 <template>
-  <v-app style="background-color: #fff;">
+  <v-app>
     <PanelBar />
     <v-content class="pa-0">
       <v-container fluid>

@@ -25,7 +25,7 @@
       <v-flex xs12 sm12 md12>
         <v-layout wrap>
           <v-flex v-for="(item, index) in posts" :key="index" xs12 sm6 md4 lg4>
-            <v-card :class="`my-2 ${$vuetify.breakpoint.mdAndUp ? 'mx-2' : ''}`" :dark=$switchMode() max-width="344">
+            <v-card :class="`my-2 ${$vuetify.breakpoint.mdAndUp ? 'mx-2' : ''}`" max-width="344">
               <v-img :src="item.image" class="white--text align-end" height="200px">
                 <v-chip color="gray" text-color="white" class="subtitle-2 ma-2" dark label small>
                   {{ item.category.title }}
