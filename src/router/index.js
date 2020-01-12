@@ -123,6 +123,11 @@ const routes = [
         path: "requests",
         name: "requests",
         component: () => import("../views/admin/Requests.vue")
+      },
+      {
+        path: "user_reports",
+        name: "user_reports",
+        component: () => import("../views/admin/reports/UserReports.vue")
       }
     ]
   },
