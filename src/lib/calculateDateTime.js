@@ -1,3 +1,3 @@
 export const switchMode = () => {
-  return new Date().getHours() >= 15
+  return new Date().getHours() >= 17
 }
