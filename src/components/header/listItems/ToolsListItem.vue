@@ -24,7 +24,7 @@ export default {
       },
       {
         text: "Contacts",
-        icon: "people",
+        icon: "contacts",
         path: "contacts"
       },
       {
