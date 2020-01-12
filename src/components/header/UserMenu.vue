@@ -1,5 +1,5 @@
 <template>
-  <v-menu v-model="menu" :close-on-content-click="false" :nudge-width="200" offset-y>
+  <v-menu v-model="menu" :close-on-content-click="menu" :close-on-click="menu" offset-x>
     <!-- avatar of user -->
     <template v-slot:activator="{ on }">
       <v-avatar size="36px" v-on="on" class="blue lighten-2">

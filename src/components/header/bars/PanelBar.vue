@@ -11,7 +11,6 @@
     <v-app-bar :clipped-left="$vuetify.breakpoint.lgAndUp" color="rgba(45,45,45,0.98)" dark dense>
       <!-- navbar icon button -->
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
-
       <!-- toolbar title -->
       <v-toolbar-title class="headline text-capitalize mr-5">
         <router-link to="/user/panel" class="white--text">
@@ -19,12 +18,9 @@
           <span class="font-weight-light">Panel</span>
         </router-link>
       </v-toolbar-title>
-
       <!-- toolbar spinner -->
       <v-progress-linear indeterminate absolute bottom color="blue accent-4"></v-progress-linear>
-
       <v-spacer></v-spacer>
-
       <!-- account menu -->
       <UserMenu v-if="user" :user="user" />
     </v-app-bar>
@@ -47,23 +43,6 @@ export default {
   data: () => ({
     drawer: false,
     menu: false,
-    items: [{
-      text: "Notes",
-      routeName: "notes"
-    },
-    {
-      text: "Contacts",
-      routeName: "contacts"
-    },
-    {
-      text: "Posts",
-      routeName: "posts"
-    },
-    {
-      text: "Events",
-      routeName: "events"
-    }
-    ],
     user: {
       username: "mohamadresaaa",
       avatar: "https://avatars3.githubusercontent.com/u/41260098?s=460&v=4",
@@ -71,10 +50,8 @@ export default {
     }
   }),
   methods: {
-    pushRoute (name) {
-      this.$router.push({
-        name
-      })
+    pushRoute (path) {
+      this.$router.push(path)
     }
   },
   components: {

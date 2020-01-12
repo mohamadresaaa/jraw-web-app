@@ -137,8 +137,7 @@ const routes = [
     component: () => import("../views/ErrorPage.vue"),
     props: {
       title: "Oops!",
-      message: "We can't find the page you're looking for.Try searching our posts",
-      color: "secondary"
+      message: "We can't find the page you're looking for.Try searching our posts"
     }
   },
   {

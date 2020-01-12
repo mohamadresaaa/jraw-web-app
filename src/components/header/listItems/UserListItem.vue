@@ -8,7 +8,7 @@
         </v-list-item>
       </template>
       <!-- items -->
-      <v-list-item v-for="(item, index) in security_items" :key="index" :to="item.path">
+      <v-list-item v-for="(item, index) in security_items" :key="index" :to="{ name: item.path }">
         <v-list-item-action>
           <v-icon v-text="item.icon"></v-icon>
         </v-list-item-action>
@@ -23,7 +23,7 @@
         </v-list-item>
       </template>
       <!-- items -->
-      <v-list-item v-for="(item, index) in setting_items" :key="index" :to="item.path">
+      <v-list-item v-for="(item, index) in setting_items" :key="index" :to="{ name: item.path }">
         <v-list-item-action>
           <v-icon v-text="item.icon"></v-icon>
         </v-list-item-action>
@@ -39,20 +39,20 @@ export default {
     return {
       setting_items: [{
         text: "Edit Profile",
-        path: "/user/edit_profile"
+        path: "edit_profile"
       },
       {
         text: "Privacy",
-        path: "/user/account"
+        path: "account"
       }],
       security_items: [
         {
           text: "Change password",
-          path: "/user/change_password"
+          path: "change_password"
         },
         {
           text: "sessions",
-          path: "/user/sessions"
+          path: "sessions"
         }
       ]
     }

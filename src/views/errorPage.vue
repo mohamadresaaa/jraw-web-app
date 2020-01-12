@@ -3,7 +3,7 @@
     <v-container fluid fill-height>
       <v-layout align-center justify-center>
         <v-flex xs12 sm12 md12>
-          <v-card elevation="0">
+          <v-card style="background-color: #303030;" elevation="0">
             <v-card-text class="text-xs-center text-center">
               <h1 :class="`error-title ${color}--text display-3 font-weight-bold`">{{ title }}</h1>
               <blockquote class="blockquote">
@@ -25,7 +25,7 @@
   </v-app>
 </template>
 
-<style lang="scss">
+<style>
   .error-title {
     color: #333333;
     text-shadow: 2px 2px 0px #FFFFFF, 5px 4px 0px rgba(0, 0, 0, 0.15);
@@ -33,8 +33,6 @@
 </style>
 
 <script>
-// import BaseBar from "./../../components/bars/BaseBar"
-
 export default {
   props: {
     title: {
@@ -46,10 +44,8 @@ export default {
       required: true
     },
     color: {
-      type: String,
-      required: true
+      type: String
     }
   }
 }
-
 </script>
