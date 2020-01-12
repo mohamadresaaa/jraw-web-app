@@ -2,7 +2,7 @@
   <v-container>
     <v-layout wrap>
       <v-flex xs12 sm12 md12>
-        <v-card-title class="pl-0 ml-0 mb-4">
+        <v-card-title class="px-0 mx-0 mb-4">
           <h3 class="font-weight-medium text-capitalize">notes</h3>
           <v-spacer></v-spacer>
           <v-dialog v-model="dialog" persistent max-width="500px">
@@ -43,18 +43,18 @@
         </v-card-title>
       </v-flex>
       <v-flex xs12 sm12 md12>
-        <v-btn @click="sortBy('title')" color="grey darken-1" text>
+        <v-btn @click="sortBy('title')" text>
           <v-icon small left>note_add</v-icon>
           <span class="caption text-capitalize">create</span>
         </v-btn>
-        <v-btn @click="sortBy('title')" color="grey darken-1" text>
+        <v-btn @click="sortBy('title')" text>
           <v-icon small left>sort_by_alpha</v-icon>
           <span class="caption text-capitalize">sort</span>
         </v-btn>
       </v-flex>
 
       <v-flex xs12 sm12 md12>
-        <v-card v-for="(item, index) in notes" :key="index" :dark=$switchMode() class="my-3" outlined>
+        <v-card v-for="(item, index) in notes" :key="index" class="my-3" outlined>
           <v-layout justify-space-around wrap class="pa-3">
             <v-flex xs6 sm6 md5>
               <div v-show="!$vuetify.breakpoint.smAndDown" class="caption grey--text">Title</div>

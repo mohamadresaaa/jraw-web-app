@@ -25,7 +25,7 @@
           >
           upload
         </v-btn>
-        <v-btn color="red darken-1" class="text-capitalize white--text my-2" outlined>
+        <v-btn color="red lighten-1" class="text-capitalize white--text my-2">
           remove
         </v-btn>
       </v-flex>
@@ -62,7 +62,7 @@
             them out, you're giving us consent to share this data wherever your user profile
             appears.</p>
           <v-spacer></v-spacer>
-          <v-btn type="submit" color="green darken-1" class="ml-0 text-capitalize white--text" outlined>
+          <v-btn type="submit" color="green darken-1" class="ml-0 text-capitalize white--text">
             save profile
           </v-btn>
         </v-form>

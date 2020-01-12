@@ -29,17 +29,17 @@
                 <td>
                   <div v-if="$vuetify.breakpoint.mdAndUp">
                     <v-divider class="mx-1" light inset vertical></v-divider>
-                    <v-btn color="black" x-small icon dark>
-                      <v-icon dark>visibility</v-icon>
+                    <v-btn x-small icon>
+                      <v-icon>visibility</v-icon>
                     </v-btn>
                     <v-divider class="mx-1" inset vertical></v-divider>
-                    <v-btn color="primary" x-small icon dark>
-                      <v-icon dark>lock_open</v-icon>
+                    <v-btn color="green" x-small icon>
+                      <v-icon>lock_open</v-icon>
                     </v-btn>
                   </div>
                   <v-menu v-else bottom left>
                     <template v-slot:activator="{ on }">
-                      <v-btn v-on="on" color="black" dark icon small>
+                      <v-btn v-on="on" icon small>
                         <v-icon>more_horiz</v-icon>
                       </v-btn>
                     </template>

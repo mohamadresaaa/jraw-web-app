@@ -5,7 +5,7 @@
         <v-card-title>
           <h3 class="font-weight-medium text-capitalize">contacts</h3>
           <v-spacer></v-spacer>
-          <v-btn color="grey darken-1" class="text-capitalize" right dark>create</v-btn>
+          <v-btn color="grey darken-1" class="text-capitalize" right>create</v-btn>
         </v-card-title>
       </v-flex>
       <v-flex xs12 sm12 md12>

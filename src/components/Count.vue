@@ -1,7 +1,13 @@
 <template>
-  <v-btn class="text-capitalize mr-0 grey darken-3 white--text" small outlined>limit: {{ limit }}
-    <v-divider class="mx-2 grey darken-1" vertical></v-divider>
-    total: {{ total }}</v-btn>
+  <!-- <v-btn class="text-capitalize mr-0" disabled small outlined></v-btn> -->
+    <v-chip
+      class="text-capitalize"
+      label
+    >
+      limit: {{ limit }}
+    <v-divider class="mx-2 grey darken-1" inset vertical></v-divider>
+    total: {{ total }}
+    </v-chip>
 </template>
 
 <script>

@@ -3,20 +3,20 @@
     <v-layout wrap>
       <!-- title -->
       <v-flex xs12 sm12 md12>
-        <v-card-title class="pl-0 ml-0 mb-4">
+        <v-card-title class="px-0 mx-0 mb-4">
           <h3 class="font-weight-medium text-capitalize">posts</h3>
         </v-card-title>
       </v-flex>
       <v-flex xs12 sm12 md12>
-        <v-btn color="grey darken-1" text>
+        <v-btn text>
           <v-icon small left>add</v-icon>
           <span class="caption text-capitalize">create</span>
         </v-btn>
-        <v-btn @click="sortBy('title')" color="grey darken-1" text>
+        <v-btn @click="sortBy('title')" text>
           <v-icon small left>sort_by_alpha</v-icon>
           <span class="caption text-capitalize">sort</span>
         </v-btn>
-        <v-btn color="grey" text disabled>
+        <v-btn text disabled>
           <span class="caption text-capitalize">
             total ({{ posts.length }})
           </span>
@@ -25,7 +25,7 @@
       <v-flex xs12 sm12 md12>
         <v-layout wrap>
           <v-flex v-for="(item, index) in posts" :key="index" xs12 sm6 md4 lg4>
-            <v-card :class="`my-2 ${$vuetify.breakpoint.mdAndUp ? 'mx-2' : ''}`" max-width="344">
+            <v-card class="my-2" max-width="344">
               <v-img :src="item.image" class="white--text align-end" height="200px">
                 <v-chip color="gray" text-color="white" class="subtitle-2 ma-2" dark label small>
                   {{ item.category.title }}

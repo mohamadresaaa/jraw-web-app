@@ -33,21 +33,21 @@
                 </td>
                 <td>
                   <div v-if="$vuetify.breakpoint.mdAndUp">
-                    <v-btn color="primary" x-small icon dark>
-                      <v-icon dark>security</v-icon>
+                    <v-btn color="primary" x-small icon>
+                      <v-icon>security</v-icon>
                     </v-btn>
                     <v-divider class="mx-1" light inset vertical></v-divider>
-                    <v-btn color="black" x-small icon dark>
-                      <v-icon dark>visibility</v-icon>
+                    <v-btn x-small icon>
+                      <v-icon>visibility</v-icon>
                     </v-btn>
                     <v-divider class="mx-1" inset vertical></v-divider>
-                    <v-btn color="red" x-small icon dark>
-                      <v-icon dark>block</v-icon>
+                    <v-btn color="red" x-small icon>
+                      <v-icon>block</v-icon>
                     </v-btn>
                   </div>
                   <v-menu v-else bottom left>
                     <template v-slot:activator="{ on }">
-                      <v-btn v-on="on" color="black" dark icon small>
+                      <v-btn v-on="on" icon small>
                         <v-icon>more_horiz</v-icon>
                       </v-btn>
                     </template>
