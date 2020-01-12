@@ -10,7 +10,7 @@
         </v-card-title>
       </v-flex>
       <v-flex xs12 sm12 md12>
-        <v-simple-table>
+        <v-simple-table :dark=$switchMode()>
           <template v-slot:default>
             <thead>
               <tr>

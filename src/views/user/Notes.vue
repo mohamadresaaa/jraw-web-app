@@ -57,7 +57,7 @@
       </v-flex>
 
       <v-flex xs12 sm12 md12>
-        <v-card v-for="(item, index) in notes" :key="index" outlined class="my-3">
+        <v-card v-for="(item, index) in notes" :key="index" :dark=$switchMode() class="my-3" outlined>
           <v-layout justify-space-around wrap class="pa-3">
             <v-flex xs6 sm6 md5>
               <div v-show="!$vuetify.breakpoint.smAndDown" class="caption grey--text">Title</div>

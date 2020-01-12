@@ -3,7 +3,7 @@
         <v-layout row wrap justify-center class="mb-3">
             <!-- count data  -->
             <v-flex xs6 sm6 md3 lg3 v-for="(item, index) in counterDate" :key="index">
-                <v-card :class="`pa-2 ${$vuetify.breakpoint.mdAndDown ? 'ma-4' : 'mx-4'}`" outlined>
+                <v-card :class="`pa-2 ${$vuetify.breakpoint.mdAndDown ? 'ma-4' : 'mx-4'}`" :dark=$switchMode() outlined>
                     <v-card-actions>
                         <v-list-item-content>
                             <v-list-item-title class="headline font-weight-bold text-capitalize">{{ item.title }}:

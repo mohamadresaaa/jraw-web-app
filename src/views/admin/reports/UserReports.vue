@@ -10,7 +10,7 @@
         </v-card-title>
       </v-flex>
       <v-flex xs12 sm12 md12>
-        <v-simple-table dark>
+        <v-simple-table :dark=$switchMode()>
           <template v-slot:default>
             <thead>
               <tr>
@@ -30,11 +30,9 @@
                     <v-btn color="green" x-small icon dark>
                       <v-icon dark>reply</v-icon>
                     </v-btn>
-                    <v-divider class="mx-1" light inset vertical></v-divider>
                     <v-btn color="black" x-small icon dark>
                       <v-icon dark>visibility</v-icon>
                     </v-btn>
-                    <v-divider class="mx-1" inset vertical></v-divider>
                     <v-btn color="red" x-small icon dark>
                       <v-icon dark>close</v-icon>
                     </v-btn>
