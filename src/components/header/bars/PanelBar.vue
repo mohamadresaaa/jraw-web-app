@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-navigation-drawer v-model="drawer" :clipped="$vuetify.breakpoint.lgAndUp" fixed app>
+    <v-navigation-drawer v-model="drawer" clipped app>
       <v-list dense>
         <!-- items of drawer -->
         <ToolsListItem />
@@ -8,12 +8,12 @@
         <UserListItem />
       </v-list>
     </v-navigation-drawer>
-    <v-app-bar :clipped-left="$vuetify.breakpoint.lgAndUp" color="rgba(45,45,45,0.98)" dark dense>
+    <v-app-bar color="rgba(45,45,45,0.98)" app clipped-left dark dense>
       <!-- navbar icon button -->
-      <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon v-if="$vuetify.breakpoint.mdAndDown" @click="drawer = !drawer"></v-app-bar-nav-icon>
       <!-- toolbar title -->
-      <v-toolbar-title class="headline text-capitalize mr-5">
-        <router-link to="/user/panel" class="white--text">
+      <v-toolbar-title class="headline text-capitalize">
+        <router-link :to="{ name: 'home' }" class="white--text">
           <span class="font-weight-bold">J</span>
           <span class="font-weight-light">Panel</span>
         </router-link>
@@ -49,9 +49,16 @@ export default {
       role: ["user", "admin"]
     }
   }),
+  created () {
+    this.setDrawer()
+  },
   methods: {
     pushRoute (path) {
       this.$router.push(path)
+    },
+    setDrawer () {
+      // eslint-disable-next-line no-unused-expressions
+      this.$vuetify.breakpoint.lgAndUp ? this.drawer = true : this.drawer = false
     }
   },
   components: {
