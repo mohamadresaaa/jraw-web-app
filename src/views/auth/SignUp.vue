@@ -8,7 +8,7 @@
             <h1 class="text-xs-center text-center mt-3 black--text">Sign up to Jraw</h1>
           </v-card-text>
           <!-- register form -->
-          <v-form v-model="isFormValid" lazy-validation ref="form" @submit.prevent>
+          <v-form v-model="isFormValid" @submit.prevent=submitSignUp() ref="form" lazy-validation>
             <v-card-text>
               <!-- username field -->
               <v-text-field
@@ -91,6 +91,13 @@ export default {
         password =>
           password.length >= 8 || "Password must be at least 8 characters"
       ]
+    }
+  },
+  methods: {
+    submitSignUp () {
+      if (this.$refs.form.validate()) {
+        console.log("sign up user")
+      }
     }
   }
 }
