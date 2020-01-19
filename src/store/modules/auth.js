@@ -54,8 +54,20 @@ export default {
         .catch(({ response: { data: { message } } }) => {
           commit("setMainState", { resource: "message", item: { content: message } }, { root: true })
         })
-    }
+    },
+    resetPassword ({ commit }, data) {
+      return http.post("/api/v1/auth/resetPassword", data)
+        .then(({ data: { message } }) => {
+          // Go to sign in page
+          router.push({ name: "login" })
 
+          // Set message state
+          commit("setMainState", { resource: "message", item: { content: message, color: "blue" } }, { root: true })
+        })
+        .catch(({ response: { data: { message } } }) => {
+          commit("setMainState", { resource: "message", item: { content: message } }, { root: true })
+        })
+    }
   },
   mutations: {
     setAuthUser (state, user) {
