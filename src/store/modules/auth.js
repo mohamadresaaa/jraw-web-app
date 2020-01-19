@@ -26,7 +26,7 @@ export default {
           commit("setMainState", { resource: "message", item: { content: message, color: "blue" } }, { root: true })
         })
         .catch(({ response: { data: { message } } }) => {
-          commit("setMainState", { resource: "message", item: { content: message, color: "red" } }, { root: true })
+          commit("setMainState", { resource: "message", item: { content: message } }, { root: true })
         })
     }
   },

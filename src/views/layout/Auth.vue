@@ -8,16 +8,17 @@
     >
       <v-content>
         <router-view />
+        <Notification />
       </v-content>
     </v-img>
   </v-app>
 </template>
 <script>
-// import Bar from "./../../components/bars/Bar"
+import Notification from "./../../components/Notification"
 
 export default {
   components: {
-    // Bar
+    Notification
   },
   data: () => ({
     //
