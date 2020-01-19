@@ -8,13 +8,13 @@
             <h1 class="text-center text-center mt-5">Reset your password</h1>
           </v-card-text>
           <!-- forgot password form -->
-          <v-form v-model="isFormValid" lazy-validation ref="form" @submit.prevent>
+          <v-form v-model="isFormValid" lazy-validation ref="form" @submit.prevent="submitPasswordRecovery()">
             <v-card-text>
               <v-alert class="subtitle-2" color="orange darken-4" text>Enter your user account's verified email address
                 and we will
                 send you a password reset link</v-alert>
               <!-- email field -->
-              <v-text-field v-model="email" :rules="emailRules" label="Email" autofocus dense outlined></v-text-field>
+              <v-text-field v-model="email" :rules="emailRules" label="Email or Username" autofocus dense outlined></v-text-field>
             </v-card-text>
             <v-card-actions class="mx-5">
               <v-spacer></v-spacer>
@@ -66,18 +66,15 @@ export default {
     return {
       isFormValid: true,
       email: "",
-      emailRules: [
-        email => !!email || "Email is required",
-        email =>
-          /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/.test(email) ||
-          "Email must be valid"
-      ]
+      emailRules: [ email => !!email || "Email or Username is required" ]
     }
   },
   methods: {
     submitPasswordRecovery () {
       if (this.$refs.form.validate()) {
-        console.log("password recovery")
+        this.$store.dispatch("auth/passwordRecovery", {
+          email: this.email
+        })
       }
     },
     submitResetPassword () {

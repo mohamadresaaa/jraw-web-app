@@ -44,7 +44,18 @@ export default {
         .catch(({ response: { data: { message } } }) => {
           commit("setMainState", { resource: "message", item: { content: message } }, { root: true })
         })
+    },
+    passwordRecovery ({ commit }, data) {
+      return http.post("/api/v1/auth/passwordRecovery", data)
+        .then(({ data: { message } }) => {
+          // Set message state
+          commit("setMainState", { resource: "message", item: { content: message, color: "blue" } }, { root: true })
+        })
+        .catch(({ response: { data: { message } } }) => {
+          commit("setMainState", { resource: "message", item: { content: message } }, { root: true })
+        })
     }
+
   },
   mutations: {
     setAuthUser (state, user) {
