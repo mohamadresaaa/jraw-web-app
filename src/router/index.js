@@ -1,6 +1,7 @@
 import Vue from "vue"
 import VueRouter from "vue-router"
 import Home from "../views/Home.vue"
+import StatusPage from "../views/StatusPage.vue"
 
 Vue.use(VueRouter)
 
@@ -91,7 +92,7 @@ const routes = [
       {
         path: "events",
         name: "events",
-        component: () => import("../views/ErrorPage.vue"),
+        component: StatusPage,
         props: {
           title: "Coming soon...",
           message: "The event feature will soon be added to the jraw",
@@ -134,7 +135,7 @@ const routes = [
   {
     path: "/404",
     name: "not_found",
-    component: () => import("../views/ErrorPage.vue"),
+    component: StatusPage,
     props: {
       title: "Oops!",
       message: "We can't find the page you're looking for.Try searching our posts"
