@@ -8,7 +8,7 @@
             <h1 class="text-xs-center text-center mt-3 black--text">Sing in to Jraw</h1>
           </v-card-text>
           <!-- login form -->
-          <v-form v-model="isFormValid" lazy-validation ref="form" @submit.prevent>
+          <v-form v-model="isFormValid" @submit.prevent=submitSignIn() ref="form" lazy-validation>
             <v-card-text>
               <!-- email and username field -->
               <v-text-field
@@ -77,6 +77,13 @@ export default {
       password: "",
       emailRules: [email => !!email || "Email or Username is required"],
       passwordRules: [password => !!password || "Password is required"]
+    }
+  },
+  methods: {
+    submitSignIn () {
+      if (this.$refs.form.validate()) {
+        console.log("sign in user")
+      }
     }
   }
 }
