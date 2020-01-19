@@ -38,7 +38,8 @@
               <v-spacer></v-spacer>
               <!-- set loading -->
               <v-btn
-                :disabled="!isFormValid"
+                :disabled="!isFormValid || loading"
+                :loading="loading"
                 color="green"
                 class="text-capitalize white--text"
                 type="submit"
@@ -66,6 +67,7 @@ a {
 </style>
 
 <script>
+import { mapGetters } from "vuex"
 
 export default {
   data () {
@@ -93,10 +95,17 @@ export default {
       ]
     }
   },
+  computed: {
+    ...mapGetters(["loading"])
+  },
   methods: {
     submitSignUp () {
       if (this.$refs.form.validate()) {
-        console.log("sign up user")
+        this.$store.dispatch("auth/register", {
+          username: this.username,
+          email: this.email,
+          password: this.password
+        })
       }
     }
   }
