@@ -82,7 +82,10 @@ export default {
   methods: {
     submitSignIn () {
       if (this.$refs.form.validate()) {
-        console.log("sign in user")
+        this.$store.dispatch("auth/login", {
+          email: this.email,
+          password: this.password
+        })
       }
     }
   }

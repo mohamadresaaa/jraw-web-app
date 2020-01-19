@@ -28,9 +28,30 @@ export default {
         .catch(({ response: { data: { message } } }) => {
           commit("setMainState", { resource: "message", item: { content: message } }, { root: true })
         })
+    },
+    login ({ commit }, data) {
+      return http.post("/api/v1/auth/login", data)
+        .then(({ data: { properties } }) => {
+          // Set token in localStorage
+          // localStorage.setItem("access-jraw", properties.user.token)
+
+          // Save data of user in state
+          commit("setAuthUser", properties.user)
+
+          // Go to login page
+          router.go()
+        })
+        .catch(({ response: { data: { message } } }) => {
+          commit("setMainState", { resource: "message", item: { content: message } }, { root: true })
+        })
     }
   },
   mutations: {
-
+    setAuthUser (state, user) {
+      state.user = user
+    },
+    setAuthState (state, authState) {
+      state.isAuthResolved = authState
+    }
   }
 }
