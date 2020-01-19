@@ -5,7 +5,7 @@
         <v-card outlined>
           <v-card-text>
             <!-- title -->
-            <h1 class="text-xs-center text-center mt-3 black--text">Sign up to Jraw</h1>
+            <h1 class="text-xs-center text-center mt-3">Sign up to Jraw</h1>
           </v-card-text>
           <!-- register form -->
           <v-form v-model="isFormValid" @submit.prevent=submitSignUp() ref="form" lazy-validation>
