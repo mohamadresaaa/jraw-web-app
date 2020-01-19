@@ -73,6 +73,18 @@ export default {
           "Email must be valid"
       ]
     }
+  },
+  methods: {
+    submitPasswordRecovery () {
+      if (this.$refs.form.validate()) {
+        console.log("password recovery")
+      }
+    },
+    submitResetPassword () {
+      if (this.$refs.form.validate()) {
+        console.log("reset password")
+      }
+    }
   }
 }
 
