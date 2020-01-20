@@ -2,6 +2,7 @@ import Vue from "vue"
 import VueRouter from "vue-router"
 import Home from "../views/Home.vue"
 import StatusPage from "../views/StatusPage.vue"
+import { isAuthenticated } from "../lib/authorization"
 
 Vue.use(VueRouter)
 
@@ -31,6 +32,7 @@ const routes = [
     path: "/auth",
     component: () => import("../views/layout/Auth.vue"),
     redirect: "/auth/sign_in",
+    beforeEnter: isAuthenticated,
     children: [
       {
         path: "sign_in",

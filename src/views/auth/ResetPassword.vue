@@ -20,7 +20,7 @@
             <v-card-actions class="mx-5">
               <v-spacer></v-spacer>
               <!-- set loading -->
-              <v-btn :disabled="!isFormValid | loading" :loading="loading" color="green"
+              <v-btn :disabled="!isFormValid || loading" :loading="loading" color="green"
                 class="text-capitalize white--text mb-5" type="submit" block>Send password reset email</v-btn>
               <v-spacer></v-spacer>
             </v-card-actions>
@@ -50,7 +50,7 @@
             </v-card-text>
             <v-card-actions class="mx-5">
               <v-spacer></v-spacer>
-              <v-btn :disabled="!isFormValid | loading" :loading="loading" color="green"
+              <v-btn :disabled="!isFormValid || loading" :loading="loading" color="green"
                 class="text-capitalize white--text mb-5" type="submit" block>reset password</v-btn>
               <v-spacer></v-spacer>
             </v-card-actions>
