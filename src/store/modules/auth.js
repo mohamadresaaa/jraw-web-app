@@ -56,8 +56,8 @@ export default {
         })
     },
     validationCode ({ commit }, code) {
-      http.get(`/api/v1/auth/verifyCode/${code}`)
-        .then(({ data: { properties } }) => properties.email)
+      return http.get(`/api/v1/auth/verifyCode/${code}`)
+        .then(({ data: { properties } }) => (properties.email))
         .catch(({ response: { data: { message } } }) => {
           // Go to reset password page
           router.push({ name: "reset_password" })
