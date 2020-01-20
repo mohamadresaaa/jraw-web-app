@@ -55,8 +55,16 @@ export default {
           commit("setMainState", { resource: "message", item: { content: message } }, { root: true })
         })
     },
-    validationCode (_, data) {
-      return data
+    validationCode ({ commit }, code) {
+      http.get(`/api/v1/auth/verifyCode/${code}`)
+        .then(({ data: { properties } }) => properties.email)
+        .catch(({ response: { data: { message } } }) => {
+          // Go to reset password page
+          router.push({ name: "reset_password" })
+
+          // Set message state
+          commit("setMainState", { resource: "message", item: { content: message } }, { root: true })
+        })
     },
     resetPassword ({ commit }, data) {
       return http.post("/api/v1/auth/resetPassword", data)

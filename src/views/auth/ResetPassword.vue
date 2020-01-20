@@ -32,7 +32,7 @@
             <v-spacer></v-spacer>
             <v-chip class="mt-5" label close small>
               <v-icon left size="18">account_circle</v-icon>
-              mohamadresaaa@gmail.com
+              {{ email }}
             </v-chip>
           </v-card-text>
           <!-- reset password form -->
@@ -79,9 +79,9 @@ export default {
     }
   },
   created () {
-    this.$store.dispatch("auth/validationCode", "test").then(res => console.log(res))
     if (this.$route.params.code) {
       this.code = this.$route.params.code
+      this.$store.dispatch("auth/validationCode", this.code).then(email => (this.email = email))
     }
   },
   methods: {
