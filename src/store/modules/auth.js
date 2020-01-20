@@ -70,7 +70,7 @@ export default {
       return http.post("/api/v1/auth/resetPassword", data)
         .then(({ data: { message } }) => {
           // Go to sign in page
-          router.push({ name: "login" })
+          router.push({ name: "sign_in" })
 
           // Set message state
           commit("setMainState", { resource: "message", item: { content: message, color: "blue" } }, { root: true })

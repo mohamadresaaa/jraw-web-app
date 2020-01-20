@@ -8,7 +8,7 @@
             <h1 class="text-center text-center mt-5">Reset your password</h1>
           </v-card-text>
           <!-- password recovery form -->
-          <v-form v-model="isFormValid" lazy-validation ref="form" @submit.prevent="submitPasswordRecovery()">
+          <v-form @submit.prevent="submitPasswordRecovery()" v-model="isFormValid" ref="form" lazy-validation>
             <v-card-text>
               <v-alert class="subtitle-2" color="orange darken-4" text>Enter your user account's verified email address
                 and we will
@@ -36,7 +36,7 @@
             </v-chip>
           </v-card-text>
           <!-- reset password form -->
-          <v-form v-model="isFormValid" lazy-validation ref="form" @submit.prevent>
+          <v-form @submit.prevent="submitResetPassword()" v-model="isFormValid" ref="form" lazy-validation>
             <v-card-text>
               <!-- new password field -->
               <v-text-field v-model="password" :rules="passwordRules" label="New password"
