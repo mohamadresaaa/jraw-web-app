@@ -14,13 +14,14 @@
                 and we will
                 send you a password reset link</v-alert>
               <!-- email field -->
-              <v-text-field v-model="email" :rules="emailRules" label="Email or Username" autofocus dense outlined></v-text-field>
+              <v-text-field v-model="email" :rules="emailRules" label="Email or Username" autofocus dense outlined>
+              </v-text-field>
             </v-card-text>
             <v-card-actions class="mx-5">
               <v-spacer></v-spacer>
               <!-- set loading -->
-              <v-btn :disabled="!isFormValid" color="green" class="text-capitalize white--text mb-5" type="submit"
-                block>Send password reset email</v-btn>
+              <v-btn :disabled="!isFormValid | loading" :loading="loading" color="green"
+                class="text-capitalize white--text mb-5" type="submit" block>Send password reset email</v-btn>
               <v-spacer></v-spacer>
             </v-card-actions>
           </v-form>
@@ -49,8 +50,8 @@
             </v-card-text>
             <v-card-actions class="mx-5">
               <v-spacer></v-spacer>
-              <v-btn :disabled="!isFormValid" color="green" class="text-capitalize white--text mb-5" type="submit"
-                block>reset password</v-btn>
+              <v-btn :disabled="!isFormValid | loading" :loading="loading" color="green"
+                class="text-capitalize white--text mb-5" type="submit" block>reset password</v-btn>
               <v-spacer></v-spacer>
             </v-card-actions>
           </v-form>
@@ -61,6 +62,8 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex"
+
 export default {
   data () {
     return {
@@ -70,7 +73,7 @@ export default {
       code: "",
       password: "",
       confirmPassword: "",
-      emailRules: [ email => !!email || "Email or Username is required" ],
+      emailRules: [email => !!email || "Email or Username is required"],
       passwordRules: [
         password => !!password || "Password is required",
         password =>
@@ -84,6 +87,9 @@ export default {
       this.code = this.$route.params.code
       this.$store.dispatch("auth/validationCode", this.code).then(email => (this.email = email))
     }
+  },
+  computed: {
+    ...mapGetters(["loading"])
   },
   methods: {
     submitPasswordRecovery () {
