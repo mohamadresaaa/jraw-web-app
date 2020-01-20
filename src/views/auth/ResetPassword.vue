@@ -65,6 +65,7 @@ export default {
   data () {
     return {
       isFormValid: true,
+      showPassword: false,
       email: "",
       code: "",
       password: "",
