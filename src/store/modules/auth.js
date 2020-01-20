@@ -33,7 +33,10 @@ export default {
       return http.post("/api/v1/auth/login", data)
         .then(({ data: { properties } }) => {
           // Set token in localStorage
-          // localStorage.setItem("access-jraw", properties.user.token)
+          localStorage.setItem("access-jraw", properties.user.token)
+
+          // Remove token from user object
+          delete properties.user.token
 
           // Save data of user in state
           commit("setAuthUser", properties.user)
