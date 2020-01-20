@@ -30,7 +30,7 @@
           <v-card-text class="text-center text-center">
             <h1 class="text-center text-center mt-5">Reset password</h1>
             <v-spacer></v-spacer>
-            <v-chip class="mt-5" label close small>
+            <v-chip v-if="email" @click:close="$router.push({ name: 'reset_password' })" class="mt-5" label close small>
               <v-icon left size="18">account_circle</v-icon>
               {{ email }}
             </v-chip>
