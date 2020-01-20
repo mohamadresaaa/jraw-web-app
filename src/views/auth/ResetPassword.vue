@@ -79,6 +79,7 @@ export default {
     }
   },
   created () {
+    this.$store.dispatch("auth/validationCode", "test").then(res => console.log(res))
     if (this.$route.params.code) {
       this.code = this.$route.params.code
     }

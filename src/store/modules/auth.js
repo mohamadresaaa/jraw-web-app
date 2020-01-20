@@ -55,6 +55,9 @@ export default {
           commit("setMainState", { resource: "message", item: { content: message } }, { root: true })
         })
     },
+    validationCode (_, data) {
+      return data
+    },
     resetPassword ({ commit }, data) {
       return http.post("/api/v1/auth/resetPassword", data)
         .then(({ data: { message } }) => {
