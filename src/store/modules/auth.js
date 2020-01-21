@@ -78,6 +78,40 @@ export default {
         .catch(({ response: { data: { message } } }) => {
           commit("setMainState", { resource: "message", item: { content: message } }, { root: true })
         })
+    },
+    getAuthUser ({ commit, getters }) {
+      // Get token from access-jraw
+      if (localStorage.getItem("access-jraw")) {
+        const user = getters["authUser"]
+
+        // If find user
+        if (user) {
+          return Promise.resolve(user)
+        }
+
+        // Otherwise
+        return http.get("/api/v1/user")
+          .then(({ data: { properties } }) => {
+            // Set data of user in state
+            commit("setAuthUser", properties.user)
+
+            // Set isAuthResolved
+            commit("setAuthState", true)
+
+            // Return data
+            return properties.user
+          })
+          .catch(error => {
+            // Clear data of state
+            commit("setAuthUser", null)
+
+            // Set isAuthResolved false
+            commit("setAuthState", false)
+
+            // Return error
+            return error
+          })
+      }
     }
   },
   mutations: {
