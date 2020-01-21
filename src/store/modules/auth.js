@@ -9,7 +9,7 @@ export default {
   },
   getters: {
     authUser (state) {
-      return state.user || null
+      return state.user
     },
     isAuthenticated (state) {
       return !!state.user
@@ -33,10 +33,7 @@ export default {
       return http.post("/api/v1/auth/login", data)
         .then(({ data: { properties } }) => {
           // Set token in localStorage
-          localStorage.setItem("access-jraw", properties.user.token)
-
-          // Remove token from user object
-          delete properties.user.token
+          localStorage.setItem("access-jraw", properties.token)
 
           // Save data of user in state
           commit("setAuthUser", properties.user)
