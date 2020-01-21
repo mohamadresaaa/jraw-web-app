@@ -22,27 +22,27 @@
                             <!-- avatar -->
                             <v-responsive class="pa-3">
                                 <v-avatar size="200" class="blue lighten-2">
-                                    <div class="title text-truncate white--text">
-                                        {{ "mohamadresaaa" }}
+                                    <div v-if="!user.avatar" class="display-4 text-truncate white--text">
+                                        {{ user.username[0] }}
                                     </div>
-                                    <img :src="'https://avatars3.githubusercontent.com/u/41260098?s=460&v=4'" alt="">
+                                    <img v-else :src="'https://avatars3.githubusercontent.com/u/41260098?s=460&v=4'" alt="">
                                 </v-avatar>
                             </v-responsive>
                             <v-card-text>
                                 <!-- fullName or username -->
                                 <div class="headline">
-                                    {{ "Mohamadreza Mosalli" }}
+                                    {{ !user.firstName && !user.lastName ? user.username : (`${user.firstName} ${user.lastName}`) }}
                                 </div>
                                 <v-divider></v-divider>
 
                                 <!-- birthday -->
                                 <div class="font-weight-bold pt-2">
-                                    <v-icon>event</v-icon> {{ "1999-10-16" }}
+                                    <v-icon>event</v-icon> {{ !user.birthday ? "Please record your date of birth!" : user.birthday }}
                                 </div>
 
                                 <!-- email -->
                                 <div class="font-weight-bold pt-2">
-                                    <v-icon>email</v-icon> {{ "mohamadresaaa@gmail.com" }}
+                                    <v-icon>email</v-icon> {{ user.email }}
                                 </div>
                             </v-card-text>
                         </v-card>
@@ -54,8 +54,8 @@
                                 <v-card-title class="headline">
                                     Bio
                                 </v-card-title>
-                                <div class="black--text">
-                                    {{ 'Please complete your bio...' }}
+                                <div>
+                                    {{ !user.bio ? "Please complete your bio..." : user.bio }}
                                 </div>
                             </v-card-text>
                         </v-card>
@@ -67,6 +67,8 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex"
+
 export default {
   data () {
     return {
@@ -96,6 +98,11 @@ export default {
       }
       ]
     }
+  },
+  computed: {
+    ...mapGetters({
+      "user": "auth/authUser"
+    })
   }
 }
 </script>
