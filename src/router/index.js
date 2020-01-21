@@ -2,7 +2,7 @@ import Vue from "vue"
 import VueRouter from "vue-router"
 import Home from "../views/Home.vue"
 import StatusPage from "../views/StatusPage.vue"
-import { isAuthenticated } from "../lib/authorization"
+import { isAuthenticated, getUser } from "../lib/authorization"
 
 Vue.use(VueRouter)
 
@@ -154,5 +154,8 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes
 })
+
+// Checked user
+router.beforeEach(getUser)
 
 export default router
