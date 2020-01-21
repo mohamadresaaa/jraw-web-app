@@ -56,6 +56,7 @@
 </style>
 
 <script>
+import { mapGetters } from "vuex"
 import UserMenu from "../../header/UserMenu"
 
 export default {
@@ -97,14 +98,13 @@ export default {
       icon: "chat_bubble",
       text: "Contact us",
       path: "/contact"
-    }
-    ],
-    user: {
-      username: "mohamadresaaa",
-      avatar: "https://avatars3.githubusercontent.com/u/41260098?s=460&v=4",
-      role: ["user", "admin"]
-    }
+    }]
   }),
+  computed: {
+    ...mapGetters({
+      "user": "auth/authUser"
+    })
+  },
   methods: {
     pushRoute (name) {
       this.$router.push({

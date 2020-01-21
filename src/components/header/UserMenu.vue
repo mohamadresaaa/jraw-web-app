@@ -23,7 +23,7 @@
           <v-list-item-content>
             <v-list-item-title>{{ user.fullName || user.username }}</v-list-item-title>
             <v-list-item-subtitle>
-              <v-chip v-if="user.role.includes('admin')" small class="mt-2" color="primary" label>Admin</v-chip>
+              <v-chip v-if="user.roles.includes('admin')" small class="mt-2" color="primary" label>Admin</v-chip>
             </v-list-item-subtitle>
           </v-list-item-content>
         </v-list-item>

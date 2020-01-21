@@ -35,6 +35,7 @@
 </style>
 
 <script>
+import { mapGetters } from "vuex"
 import UserMenu from "../../header/UserMenu"
 import UserListItem from "../listItems/UserListItem"
 import ToolsListItem from "../listItems/ToolsListItem"
@@ -42,15 +43,15 @@ import ToolsListItem from "../listItems/ToolsListItem"
 export default {
   data: () => ({
     drawer: false,
-    menu: false,
-    user: {
-      username: "mohamadresaaa",
-      avatar: "https://avatars3.githubusercontent.com/u/41260098?s=460&v=4",
-      role: ["user", "admin"]
-    }
+    menu: false
   }),
   created () {
     this.setDrawer()
+  },
+  computed: {
+    ...mapGetters({
+      "user": "auth/authUser"
+    })
   },
   methods: {
     pushRoute (path) {
