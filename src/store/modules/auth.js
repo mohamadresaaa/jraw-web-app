@@ -45,6 +45,28 @@ export default {
           commit("setMainState", { resource: "message", item: { content: message } }, { root: true })
         })
     },
+    logout ({ commit }) {
+      http.get("/api/v1/user/logout")
+        .then(({ data: { message } }) => {
+          // Clear data of state
+          commit("setAuthUser", null)
+
+          // Set isAuthResolved false
+          commit("setAuthState", false)
+
+          // Remove access-jraw from localStorage
+          localStorage.removeItem("access-jraw")
+
+          // Go to home page
+          router.push({ name: "home" })
+
+          // Set message state
+          commit("setMainState", { resource: "message", item: { content: message, color: "green" } }, { root: true })
+        })
+        .catch(() => {
+          commit("setMainState", { resource: "message", item: { content: "Action failed" } }, { root: true })
+        })
+    },
     passwordRecovery ({ commit }, data) {
       return http.post("/api/v1/auth/passwordRecovery", data)
         .then(({ data: { message } }) => {
@@ -107,6 +129,9 @@ export default {
 
             // Set isAuthResolved false
             commit("setAuthState", false)
+
+            // Remove access-jraw from localStorage
+            localStorage.removeItem("access-jraw")
 
             // Return error
             return error
