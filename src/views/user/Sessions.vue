@@ -11,7 +11,7 @@
           <v-card outlined tile>
             <v-layout wrap class="pa-3">
               <v-flex xs3 sm3 md2>
-                <div :class="`mt-3 ${$vuetify.breakpoint.sm ? 'ml-5' : ''}`">
+                <div class="mt-3 ml-5">
                   <v-icon :color="item.isCurrent ? 'green' : ''" right x-large>{{ setDeviceIcon(item.device.os) }}</v-icon>
                 </div>
               </v-flex>
