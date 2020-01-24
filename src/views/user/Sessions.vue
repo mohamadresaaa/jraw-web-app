@@ -7,11 +7,11 @@
         </v-card-title>
       </v-flex>
       <v-flex xs12 sm12 md3 v-for="(item, index) in sessions" :key="index" class="pa-1">
-        <v-card min-height=160 outlined tile>
+        <v-card min-height=140 outlined tile>
           <v-layout wrap class="pa-3">
             <v-flex xs3 sm2 md3>
               <div :class="`mt-5 ${$vuetify.breakpoint.sm ? 'ml-5' : ''}`">
-                <v-icon right x-large>desktop_mac</v-icon>
+                <v-icon right x-large>{{ setDeviceIcon(item.device.os) }}</v-icon>
               </div>
             </v-flex>
             <v-flex xs9 sm6 md9>
@@ -59,6 +59,17 @@ export default {
   },
   created () {
     this.$store.dispatch("session/fetchSessions")
+  },
+  methods: {
+    setDeviceIcon (os) {
+      switch (os) {
+        case "macOs":
+          return "desktop_mac"
+
+        default:
+          return "devices_other"
+      }
+    }
   }
 }
 </script>
