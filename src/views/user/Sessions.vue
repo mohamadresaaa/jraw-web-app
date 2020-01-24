@@ -6,7 +6,7 @@
           <h3 class="font-weight-medium text-capitalize">sessions</h3>
         </v-card-title>
       </v-flex>
-      <v-flex xs12 sm12 md3 v-for="(item, index) in sessions" :key="index" class="pa-1">
+      <v-flex xs12 sm6 md3 v-for="(item, index) in sessions" :key="index" class="pa-1">
         <v-card min-height=140 outlined tile>
           <v-layout wrap class="pa-3">
             <v-flex xs3 sm2 md3>
@@ -32,7 +32,7 @@
               </ul>
             </v-flex>
             <v-flex xs12 sm4 md2>
-              <v-btn v-if="!item.isCurrent" @click="deleteItem(item)" class="text-capitalize white--text mt-5" color="red lighten-1" small>
+              <v-btn v-if="!item.isCurrent" @click="deleteItem(item._id)" class="text-capitalize white--text mt-5" color="red lighten-1" small>
                 remove
               </v-btn>
             </v-flex>
@@ -64,6 +64,9 @@ export default {
         default:
           return "fas fa-question"
       }
+    },
+    deleteItem (id) {
+      console.log(id)
     }
   }
 }
