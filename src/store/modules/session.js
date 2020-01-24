@@ -21,6 +21,22 @@ export default {
         .catch(({ response: { data: { message } } }) => {
           commit("setMainState", { resource: "message", item: { content: message, color: "red" } }, { root: true })
         })
+    },
+    deleteSession ({ state, commit }, item) {
+      return http.delete(`/api/v1/user/sessions/${item._id}`)
+        .then(({ data: { message } }) => {
+          // Find index
+          let index = state.items.indexOf(item)
+
+          // Remove item from sessions
+          state.items.splice(index, 1)
+
+          // Set message state
+          commit("setMainState", { resource: "message", item: { content: message, color: "green" } }, { root: true })
+        })
+        .catch(({ response: { data: { message } } }) => {
+          commit("setMainState", { resource: "message", item: { content: message, color: "red" } }, { root: true })
+        })
     }
   }
 }
