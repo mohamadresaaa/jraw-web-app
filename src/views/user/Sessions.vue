@@ -6,8 +6,8 @@
           <h3 class="font-weight-medium text-capitalize">sessions</h3>
         </v-card-title>
       </v-flex>
-      <v-flex xs12 sm12 md3 v-for="(item, index) in 4" :key="index" class="pa-1">
-        <v-card outlined tile>
+      <v-flex xs12 sm12 md3 v-for="(item, index) in sessions" :key="index" class="pa-1">
+        <v-card min-height=160 outlined tile>
           <v-layout wrap class="pa-3">
             <v-flex xs3 sm2 md3>
               <div :class="`mt-5 ${$vuetify.breakpoint.sm ? 'ml-5' : ''}`">
@@ -15,25 +15,24 @@
               </div>
             </v-flex>
             <v-flex xs9 sm6 md9>
-              <div class="font-weight-bold green--text">Current session</div>
+              <div v-if="item.isCurrent" class="font-weight-bold green--text">Current session</div>
               <ul>
                 <li>
-                  <div class="body-2 grey--text"><span>ip:</span> <span class="blue-grey--text font-weight-bold">192.168.1.1</span>
+                  <div class="body-2 grey--text"><span>ip:</span> <span class="blue-grey--text font-weight-bold">{{ item.ip }}</span>
                   </div>
                 </li>
                 <li>
-                  <div class="body-2 grey--text"><span>Device:</span> <span class="blue-grey--text font-weight-bold">mac book
-                      pro</span>
+                  <div class="body-2 grey--text"><span>Os:</span> <span class="blue-grey--text font-weight-bold">{{ item.device.os }}</span>
                   </div>
                 </li>
                 <li>
-                  <div class="body-2 grey--text"><span>Created at:</span> <span
-                      class="blue-grey--text font-weight-bold">1999/10/16</span></div>
+                  <div class="body-2 grey--text"><span>join at:</span> <span
+                      class="blue-grey--text font-weight-bold">{{ item.createdAt }}</span></div>
                 </li>
               </ul>
             </v-flex>
             <v-flex xs12 sm4 md2>
-              <v-btn @click="deleteItem(item)" class="text-capitalize white--text mt-5" color="red lighten-1" small>
+              <v-btn v-if="!item.isCurrent" @click="deleteItem(item)" class="text-capitalize white--text mt-5" color="red lighten-1" small>
                 remove
               </v-btn>
             </v-flex>
@@ -45,12 +44,21 @@
 </template>
 
 <script>
+import { mapState } from "vuex"
+
 export default {
   data () {
     return {
 
     }
+  },
+  computed: {
+    ...mapState({
+      sessions: state => state.session.items
+    })
+  },
+  created () {
+    this.$store.dispatch("session/fetchSessions")
   }
 }
-
 </script>
