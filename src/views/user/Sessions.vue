@@ -47,11 +47,6 @@
 import { mapState } from "vuex"
 
 export default {
-  data () {
-    return {
-
-    }
-  },
   computed: {
     ...mapState({
       sessions: state => state.session.items
@@ -63,11 +58,11 @@ export default {
   methods: {
     setDeviceIcon (os) {
       switch (os) {
-        case "macOs":
-          return "desktop_mac"
+        case "macOs" || "iOS":
+          return "fab fa-apple"
 
         default:
-          return "devices_other"
+          return "fas fa-question"
       }
     }
   }
