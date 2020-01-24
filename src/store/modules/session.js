@@ -1,4 +1,4 @@
-// import http from "@/lib/http"
+import http from "@/lib/http"
 
 export default {
   namespaced: true,
@@ -7,5 +7,20 @@ export default {
     item: {}
   },
   actions: {
+    fetchSessions ({ state, commit }) {
+      // clear categories
+      commit("setItems", { resource: "session", items: [] }, { root: true })
+      return http.get("/api/v1/user/sessions")
+        .then(({ data: { properties } }) => {
+          // Set sessions
+          commit("setItems", { resource: "session", items: properties.session }, { root: true })
+
+          // Return sessions
+          return state.items
+        })
+        .catch(({ response: { data: { message } } }) => {
+          commit("setMainState", { resource: "message", item: { content: message, color: "red" } }, { root: true })
+        })
+    }
   }
 }
