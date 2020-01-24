@@ -8,7 +8,7 @@ export default {
   },
   actions: {
     fetchSessions ({ state, commit }) {
-      // clear categories
+      // Clear session
       commit("setItems", { resource: "session", items: [] }, { root: true })
       return http.get("/api/v1/user/sessions")
         .then(({ data: { properties } }) => {
