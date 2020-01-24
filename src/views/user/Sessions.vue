@@ -32,7 +32,7 @@
               </ul>
             </v-flex>
             <v-flex xs12 sm4 md2>
-              <v-btn v-if="!item.isCurrent" @click="deleteItem(item._id)" class="text-capitalize white--text mt-5" color="red lighten-1" small>
+              <v-btn v-if="!item.isCurrent" @click="deleteItem(item)" class="text-capitalize white--text mt-5" color="red lighten-1" small>
                 remove
               </v-btn>
             </v-flex>
@@ -65,8 +65,8 @@ export default {
           return "fas fa-question"
       }
     },
-    deleteItem (id) {
-      console.log(id)
+    deleteItem (item) {
+      this.$store.dispatch("session/deleteSession", item)
     }
   }
 }
