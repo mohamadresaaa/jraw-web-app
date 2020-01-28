@@ -2,18 +2,26 @@ import { Doughnut } from "../../lib/baseChart"
 
 export default {
   extends: Doughnut,
+  props: {
+    labels: {
+      type: Array,
+      default: []
+    },
+    data: {
+      type: Array,
+      default: null
+    },
+    backgroundColors: {
+      type: Array
+    }
+  },
   mounted () {
     this.renderChart({
-      labels: ["VueJs", "EmberJs", "ReactJs", "AngularJs"],
+      labels: this.labels,
       datasets: [
         {
-          backgroundColor: [
-            "#41B883",
-            "#E46651",
-            "#00D8FF",
-            "#DD1B16"
-          ],
-          data: [40, 20, 80, 10]
+          backgroundColor: this.backgroundColors,
+          data: this.data
         }
       ]
     }, { responsive: true, maintainAspectRatio: false })
