@@ -24,7 +24,7 @@
               Os users
             </v-card-title>
             <v-spacer></v-spacer>
-            <doughnutChart :labels="['macOs', 'Windows', 'Linux', 'iOS', 'Android']" :data="[20, 65, 10, 50, 70]" :backgroundColors="['#424242','#2979FF','#FF9100','#FF1744','#2E7D32']" />
+            <pieChart :labels="['macOs', 'Windows', 'Linux', 'iOS', 'Android']" :data="[20, 65, 10, 50, 70]" :backgroundColors="['#424242','#2979FF','#FF9100','#FF1744','#2E7D32']" />
           </v-card-text>
         </v-card>
       </v-flex>
@@ -34,10 +34,12 @@
 
 <script>
 import doughnutChart from "../../components/charts/doughnutChart"
+import pieChart from "../../components/charts/pieChart"
 
 export default {
   components: {
-    doughnutChart
+    doughnutChart,
+    pieChart
   }
 }
 </script>
