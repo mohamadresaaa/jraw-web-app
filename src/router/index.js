@@ -110,7 +110,8 @@ const routes = [
     children: [
       {
         path: "panel",
-        name: "admin_panel"
+        name: "admin_panel",
+        component: () => import("../views/admin/Dashboard.vue")
       },
       {
         path: "users",
