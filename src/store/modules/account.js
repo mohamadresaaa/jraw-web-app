@@ -4,7 +4,7 @@ import router from "@/router"
 export default {
   namespaced: true,
   actions: {
-    accountActivation ({ commit }, code) {
+    activation ({ commit }, code) {
       return http.get(`/api/v1/account/activation/${code}`)
         .then(({ data: { properties: { message } } }) => {
           // Set message state
