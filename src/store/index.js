@@ -2,6 +2,7 @@ import Vue from "vue"
 import Vuex from "vuex"
 
 // modules
+import account from "./modules/account"
 import auth from "./modules/auth"
 import session from "./modules/session"
 
@@ -33,6 +34,7 @@ export default new Vuex.Store({
     }
   },
   modules: {
+    account,
     auth,
     session
   }
