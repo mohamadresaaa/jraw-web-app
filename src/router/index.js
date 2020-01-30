@@ -48,6 +48,11 @@ const routes = [
         path: "reset_password/:code?",
         name: "reset_password",
         component: () => import("../views/auth/ResetPassword.vue")
+      },
+      {
+        path: "account_activation/:code",
+        name: "account_activation",
+        component: () => import("../views/auth/UserActivation.vue")
       }
     ]
   },
