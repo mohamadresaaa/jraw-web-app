@@ -6,7 +6,7 @@ export default {
   actions: {
     activation ({ commit }, code) {
       return http.get(`/api/v1/account/activation/${code}`)
-        .then(({ data: { properties: { message } } }) => {
+        .then(({ data: { message } }) => {
           // Set message state
           commit("setMainState", { resource: "message", item: { content: message, color: "green" } }, { root: true })
 

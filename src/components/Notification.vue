@@ -1,7 +1,7 @@
 <template>
   <v-snackbar v-if="message" v-model="snackbar" :class="`font-weight-medium font-weight-bold ${ !message.color ? 'amber' : message.color}--text`">
     {{ message.content }}
-    <v-btn @click="closeMessage" icon>
+    <v-btn @click="closeMessage" color="white" icon>
       <v-icon>close</v-icon>
     </v-btn>
   </v-snackbar>
