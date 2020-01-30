@@ -18,7 +18,7 @@
 <script>
 export default {
   created () {
-    console.log(this.$route.params.code)
+    this.$store.dispatch("account/activation", this.$route.params.code)
   }
 }
 </script>

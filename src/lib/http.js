@@ -3,7 +3,7 @@ import store from "@/store"
 
 // Set url and headers
 const http = axios.create({
-  baseURL: "http://localhost:300",
+  baseURL: "http://localhost:3000",
   headers: {
     "authorization": localStorage.getItem("access-jraw") || ""
   }
