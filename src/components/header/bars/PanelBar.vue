@@ -8,9 +8,9 @@
         <UserListItem />
       </v-list>
     </v-navigation-drawer>
-    <v-app-bar color="rgba(45,45,45,0.98)" app clipped-left dark dense>
+    <v-app-bar color="rgba(45,45,45,0.98)" app clipped-left dense>
       <!-- navbar icon button -->
-      <v-app-bar-nav-icon v-if="$vuetify.breakpoint.mdAndDown" @click="drawer = !drawer"></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon v-if="$vuetify.breakpoint.mdAndDown" @click="drawer = !drawer" color="white"></v-app-bar-nav-icon>
       <!-- toolbar title -->
       <v-toolbar-title class="headline text-capitalize">
         <router-link :to="{ name: 'home' }" class="white--text">
