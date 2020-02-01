@@ -52,7 +52,12 @@ const routes = [
       {
         path: "account_activation/:code",
         name: "account_activation",
-        component: () => import("../views/auth/UserActivation.vue")
+        component: () => import("../views/auth/Activation.vue")
+      },
+      {
+        path: "account_reactivation",
+        name: "account_reactivation",
+        component: () => import("../views/auth/Reactivation.vue")
       }
     ]
   },
