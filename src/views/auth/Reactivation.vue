@@ -8,7 +8,7 @@
             <h1 class="text-xs-center text-center mt-3">Account reactivation</h1>
           </v-card-text>
           <!-- login form -->
-          <v-form v-model="isFormValid" @submit.prevent=submitSignIn() ref="form" lazy-validation>
+          <v-form v-model="isFormValid" @submit.prevent=submitReactivation() ref="form" lazy-validation>
             <v-card-text>
               <!-- email and username field -->
               <v-text-field v-model="email" :rules="emailRules" label="Email or Username" autofocus outlined dense>
@@ -50,6 +50,9 @@ export default {
   methods: {
     submitReactivation () {
       if (this.$refs.form.validate()) {
+        this.$store.dispatch("account/reactivation", {
+          username: this.email
+        })
       }
     }
   }
