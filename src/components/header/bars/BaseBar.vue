@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-navigation-drawer v-model="drawer" :clipped="$vuetify.breakpoint.lgAndUp" fixed app>
+    <v-navigation-drawer v-model="drawer" :clipped="$vuetify.breakpoint.lgAndUp" app>
       <v-list dense>
         <!-- items of drawer -->
         <v-list-item v-for="(item, index) in drawerItems" :key="index" :to="item.path" link>
@@ -15,10 +15,10 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-    <v-app-bar :clipped-left="$vuetify.breakpoint.lgAndUp" color="rgba(45,45,45,0.98)" dark app fixed>
+    <v-toolbar color="rgba(45,45,45,0.98)" dense>
       <!-- navbar icon button -->
-      <v-app-bar-nav-icon @click="drawer = !drawer" class="hidden-md-and-up"></v-app-bar-nav-icon>
-      <!-- toolbar title -->
+      <v-app-bar-nav-icon v-if="$vuetify.breakpoint.mdAndDown" @click="drawer = !drawer"></v-app-bar-nav-icon>
+
       <v-toolbar-title class="headline text-uppercase mr-5">
         <router-link :to="{ name: 'home' }" class="white--text">
           <span class="font-weight-bold">j</span>
@@ -27,24 +27,22 @@
       </v-toolbar-title>
       <!-- items of toolbar -->
       <v-toolbar-items v-for="(item, index) in toolbarItems" :key="index">
-        <v-btn class="text-capitalize hidden-sm-and-down" :to="item.path" text>{{ item.text }}</v-btn>
+        <v-btn class="text-capitalize hidden-sm-and-down white--text" :to="item.path" text>{{ item.text }}</v-btn>
       </v-toolbar-items>
-      <!-- toolbar spinner -->
-      <v-progress-linear indeterminate absolute bottom color="blue accent-4"></v-progress-linear>
       <v-spacer></v-spacer>
-      <v-text-field class="hidden-sm-and-down mr-5" label="Search..." solo-inverted flat hide-details dense />
+      <v-text-field class="hidden-sm-and-down mr-5" label="Search..." solo-inverted flat hide-details dense dark />
       <!-- account menu -->
       <UserMenu v-if="user" :user="user" />
       <!-- auth buttons and search field -->
       <div v-else>
-        <v-btn @click="pushRoute('sign_up')" class="mr-2 text-capitalize hidden-sm-and-down" text small>
+        <v-btn @click="pushRoute('sign_up')" class="mr-2 text-capitalize hidden-sm-and-down white--text" text small>
           <span>Sign up</span>
         </v-btn>
-        <v-btn @click="pushRoute('sign_in')" class="text-capitalize black--text" color="white" small>
+        <v-btn @click="pushRoute('sign_in')" class="text-capitalize" small>
           <span>Sign in</span>
         </v-btn>
       </div>
-    </v-app-bar>
+    </v-toolbar>
   </div>
 </template>
 
@@ -52,7 +50,6 @@
   a {
     text-decoration: none;
   }
-
 </style>
 
 <script>
@@ -98,7 +95,8 @@ export default {
       icon: "chat_bubble",
       text: "Contact us",
       path: "/contact"
-    }]
+    }
+    ]
   }),
   computed: {
     ...mapGetters({
