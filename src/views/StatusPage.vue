@@ -3,22 +3,23 @@
     <v-container fluid fill-height>
       <v-layout align-center justify-center>
         <v-flex xs12 sm12 md12>
-          <v-card :style="`background-color: ${ $vuetify.theme.isDark ? '#303030' : '#fafafa' }`" elevation="0">
-            <v-card-text class="text-xs-center text-center">
-              <h1 :class="`error-title ${!color && $vuetify.theme.isDark ? 'grey' : color}--text display-3 font-weight-bold`">{{ title }}</h1>
-              <blockquote class="blockquote">
-                {{ message }}
-              </blockquote>
-            </v-card-text>
-            <v-card-actions class="mx-5">
-              <v-spacer></v-spacer>
-              <v-btn :to="{ name: 'home' }" :color="!color && !$vuetify.theme.isDark ? 'grey darken-3' : color" class="text-capitalize white--text" outlined>
-                <span class="ml-2">back to home</span>
-                <v-icon right>keyboard_arrow_right</v-icon>
-              </v-btn>
-              <v-spacer></v-spacer>
-            </v-card-actions>
-          </v-card>
+          <v-card-text class="text-xs-center text-center">
+            <h1
+              :class="`error-title ${!color && $vuetify.theme.isDark ? 'grey' : color}--text display-3 font-weight-bold`">
+              {{ title }}</h1>
+            <blockquote class="blockquote">
+              {{ message }}
+            </blockquote>
+          </v-card-text>
+          <v-card-actions class="mx-5">
+            <v-spacer></v-spacer>
+            <v-btn :to="{ name: 'home' }" :color="!color && !$vuetify.theme.isDark ? 'grey darken-3' : color"
+              class="text-capitalize white--text" outlined>
+              <span class="ml-2">back to home</span>
+              <v-icon right>keyboard_arrow_right</v-icon>
+            </v-btn>
+            <v-spacer></v-spacer>
+          </v-card-actions>
         </v-flex>
       </v-layout>
     </v-container>
