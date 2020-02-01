@@ -42,7 +42,7 @@ export default {
         path: "edit_profile"
       },
       {
-        text: "Privacy",
+        text: "Account",
         path: "account"
       }],
       security_items: [
