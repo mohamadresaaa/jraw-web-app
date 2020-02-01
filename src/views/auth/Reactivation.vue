@@ -51,7 +51,7 @@ export default {
     submitReactivation () {
       if (this.$refs.form.validate()) {
         this.$store.dispatch("account/reactivation", {
-          username: this.email
+          email: this.email
         })
       }
     }
