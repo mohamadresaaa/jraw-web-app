@@ -19,7 +19,7 @@
         </router-link>
       </v-toolbar-title>
       <!-- toolbar spinner -->
-      <v-progress-linear indeterminate absolute bottom color="blue accent-4"></v-progress-linear>
+      <v-progress-linear :active="loading" :indeterminate="loading" color="blue" absolute bottom></v-progress-linear>
       <v-spacer></v-spacer>
       <!-- account menu -->
       <UserMenu v-if="user" :user="user" />
@@ -50,6 +50,7 @@ export default {
   },
   computed: {
     ...mapGetters({
+      "loading": "loading",
       "user": "auth/authUser"
     })
   },
