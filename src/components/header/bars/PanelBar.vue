@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-navigation-drawer v-model="drawer" clipped app>
+    <v-navigation-drawer v-model="drawer" absolute temporary app>
       <v-list dense>
         <!-- items of drawer -->
         <ToolsListItem />
@@ -8,22 +8,19 @@
         <UserListItem />
       </v-list>
     </v-navigation-drawer>
-    <v-app-bar color="rgba(45,45,45,0.98)" app clipped-left dense>
+    <v-toolbar color="rgba(45,45,45,0.98)" dense>
       <!-- navbar icon button -->
-      <v-app-bar-nav-icon v-if="$vuetify.breakpoint.mdAndDown" @click="drawer = !drawer" color="white"></v-app-bar-nav-icon>
-      <!-- toolbar title -->
+      <v-app-bar-nav-icon @click="drawer = !drawer" color="white"></v-app-bar-nav-icon>
       <v-toolbar-title class="headline text-capitalize">
         <router-link :to="{ name: 'home' }" class="white--text">
           <span class="font-weight-bold">J</span>
           <span class="font-weight-light">Panel</span>
         </router-link>
       </v-toolbar-title>
-      <!-- toolbar spinner -->
-      <v-progress-linear :active="loading" :indeterminate="loading" color="blue" absolute bottom></v-progress-linear>
       <v-spacer></v-spacer>
       <!-- account menu -->
-      <UserMenu v-if="user" :user="user" />
-    </v-app-bar>
+      <UserMenu :user="user" />
+    </v-toolbar>
   </div>
 </template>
 
@@ -44,9 +41,6 @@ export default {
     drawer: false,
     menu: false
   }),
-  created () {
-    this.setDrawer()
-  },
   computed: {
     ...mapGetters({
       "loading": "loading",
@@ -56,10 +50,6 @@ export default {
   methods: {
     pushRoute (path) {
       this.$router.push(path)
-    },
-    setDrawer () {
-      // eslint-disable-next-line no-unused-expressions
-      this.$vuetify.breakpoint.lgAndUp ? this.drawer = true : this.drawer = false
     }
   },
   components: {
