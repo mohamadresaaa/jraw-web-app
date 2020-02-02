@@ -3,7 +3,7 @@
     <v-layout wrap>
       <!-- title -->
       <v-flex xs12 sm12 md12>
-        <v-card-title class="px-0 mx-0 mb-4">
+        <v-card-title class="px-0 mx-0 my-2">
           <h3 class="font-weight-medium text-capitalize">posts</h3>
         </v-card-title>
       </v-flex>

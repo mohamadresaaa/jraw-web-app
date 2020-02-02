@@ -2,16 +2,14 @@
   <v-container>
     <v-layout wrap>
       <v-flex xs12 sm12 md12>
-        <v-card-title>
+        <v-card-title class="px-0 mx-0 my-2">
           <h3 class="font-weight-medium text-capitalize">contacts</h3>
-          <v-spacer></v-spacer>
-          <v-btn color="grey darken-1" class="text-capitalize" right>create</v-btn>
         </v-card-title>
       </v-flex>
       <v-flex xs12 sm12 md12>
         <v-layout wrap>
           <v-flex xs12 sm6 md4 lg3 v-for="(contact, index) in contacts" :key="index">
-            <v-card class="text-center text-xs-center ma-2" outlined>
+            <v-card class="text-center text-xs-center ma-1" outlined>
               <v-responsive class="pa-3">
                 <v-avatar size="100" class="grey lighten-2">
                   <img :src="contact.image" :alt="contact.name">

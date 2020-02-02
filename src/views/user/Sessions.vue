@@ -2,16 +2,16 @@
   <v-container>
     <v-layout wrap>
       <v-flex xs12 sm12 md12>
-        <v-card-title class="px-0 mx-0 mb-4">
+        <v-card-title class="px-0 mx-0 my-2">
           <h3 class="font-weight-medium text-capitalize">sessions</h3>
         </v-card-title>
       </v-flex>
-      <v-flex v-for="item in 6" :key="item+'-loader'" class="pa-1" xs12 sm6 md6>
+      <v-flex v-for="item in 6" :key="item+'-loader'" xs12 sm6 md6>
         <v-skeleton-loader v-if="loading" :loading="loading" transition="fade-transition" height="140"
           type="list-item-avatar-three-line">
         </v-skeleton-loader>
       </v-flex>
-      <v-flex xs12 sm6 md6 v-for="(item, index) in sessions" :key="index" class="pa-1">
+      <v-flex v-for="(item, index) in sessions" :key="index" class="pa-1" xs12 sm6 md6>
         <v-card outlined tile>
           <v-layout wrap class="pa-3">
             <v-flex xs3 sm3 md2>

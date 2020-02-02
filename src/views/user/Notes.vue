@@ -2,13 +2,10 @@
   <v-container>
     <v-layout wrap>
       <v-flex xs12 sm12 md12>
-        <v-card-title class="px-0 mx-0 mb-4">
+        <v-card-title class="px-0 mx-0 my-2">
           <h3 class="font-weight-medium text-capitalize">notes</h3>
           <v-spacer></v-spacer>
           <v-dialog v-model="dialog" persistent max-width="500px">
-            <template v-slot:activator="{ on }">
-              <!-- <v-btn color="primary" dark class="text-capitalize" v-on="on">create</v-btn> -->
-            </template>
             <v-card>
               <v-form v-model="isFormValid" lazy-validation ref="form">
                 <v-card-title>
