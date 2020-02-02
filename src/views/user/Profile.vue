@@ -1,25 +1,15 @@
 <template>
-    <div>
-        <v-layout row wrap justify-center class="mb-3">
-            <!-- count data  -->
-            <v-flex xs6 sm6 md3 lg3 v-for="(item, index) in counterDate" :key="index">
-                <v-card :class="`pa-2 ${$vuetify.breakpoint.mdAndDown ? 'ma-4' : 'mx-4'}`" outlined>
-                    <v-card-actions>
-                        <v-list-item-content>
-                            <v-list-item-title class="headline font-weight-bold text-capitalize">{{ item.title }}:
-                                {{ item.count }}</v-list-item-title>
-                        </v-list-item-content>
-                        <v-icon :color="item.iconColor" size=60>{{ item.icon }}</v-icon>
-                    </v-card-actions>
-                </v-card>
-            </v-flex>
-        </v-layout>
-        <v-layout row wrap>
+<v-container>
+    <v-layout wrap>
+        <v-flex xs12 sm12 md12>
+            <v-card-title class="px-0 mx-0 my-2">
+            <h3 class="font-weight-medium text-capitalize">Profile</h3>
+            </v-card-title>
+        </v-flex>
             <v-flex xs12 sm12 md12 lg12>
-                <v-layout wrap>
+                <v-layout row>
                     <v-flex xs12 sm12 md6 lg6>
-                        <v-card :class="`pa-2 ${$vuetify.breakpoint.mdAndDown ? 'ma-4' : 'mx-4'}`" outlined>
-                            <!-- avatar -->
+                        <v-card :class="`${$vuetify.breakpoint.mdAndDown ? 'ma-4' : 'ml-4 mr-1'}`" outlined>
                             <v-responsive class="pa-3">
                                 <v-avatar size="200" class="blue lighten-2">
                                     <div v-if="!user.avatar" class="display-4 text-truncate white--text">
@@ -29,18 +19,14 @@
                                 </v-avatar>
                             </v-responsive>
                             <v-card-text>
-                                <!-- fullName or username -->
                                 <div class="headline">
                                     {{ !user.firstName && !user.lastName ? user.username : (`${user.firstName} ${user.lastName}`) }}
                                 </div>
                                 <v-divider></v-divider>
 
-                                <!-- birthday -->
                                 <div class="font-weight-bold pt-2">
                                     <v-icon>event</v-icon> {{ !user.birthday ? "Please record your date of birth!" : user.birthday }}
                                 </div>
-
-                                <!-- email -->
                                 <div class="font-weight-bold pt-2">
                                     <v-icon>email</v-icon> {{ user.email }}
                                 </div>
@@ -48,8 +34,7 @@
                         </v-card>
                     </v-flex>
                     <v-flex xs12 sm12 md6 lg6>
-                        <v-card :class="`pa-2 ${$vuetify.breakpoint.mdAndDown ? 'ma-4' : 'mx-4'}`" outlined>
-                            <!-- bio -->
+                        <v-card :class="`${$vuetify.breakpoint.mdAndDown ? 'ma-4' : 'mr-4 ml-1'}`" outlined>
                             <v-card-text>
                                 <v-card-title class="headline">
                                     Bio
@@ -62,8 +47,8 @@
                     </v-flex>
                 </v-layout>
             </v-flex>
-        </v-layout>
-    </div>
+    </v-layout>
+</v-container>
 </template>
 
 <script>
