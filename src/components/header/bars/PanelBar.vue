@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-navigation-drawer v-model="drawer" absolute temporary app>
+    <v-navigation-drawer v-model="drawer" clipped app>
       <v-list dense>
         <!-- items of drawer -->
         <ToolsListItem />
@@ -8,19 +8,25 @@
         <UserListItem />
       </v-list>
     </v-navigation-drawer>
-    <v-toolbar color="rgba(45,45,45,0.98)" dense>
-      <!-- navbar icon button -->
+    <v-app-bar
+      color="rgba(45,45,45,0.98)"
+      dense
+      dark
+      fixed
+    >
       <v-app-bar-nav-icon @click="drawer = !drawer" color="white"></v-app-bar-nav-icon>
-      <v-toolbar-title class="headline text-capitalize">
+
+      <v-toolbar-title class="headline text-uppercase mr-5">
         <router-link :to="{ name: 'home' }" class="white--text">
-          <span class="font-weight-bold">J</span>
-          <span class="font-weight-light">Panel</span>
+          <span class="font-weight-bold">j</span>
+          <span class="font-weight-light">raw</span>
         </router-link>
       </v-toolbar-title>
+
       <v-spacer></v-spacer>
       <!-- account menu -->
       <UserMenu :user="user" />
-    </v-toolbar>
+    </v-app-bar>
   </div>
 </template>
 
@@ -38,7 +44,7 @@ import ToolsListItem from "../listItems/ToolsListItem"
 
 export default {
   data: () => ({
-    drawer: false,
+    drawer: true,
     menu: false
   }),
   computed: {

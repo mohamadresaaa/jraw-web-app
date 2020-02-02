@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <PanelBar />
-    <v-content class="pa-0">
+    <v-content class="pa-0 pt-5">
       <v-container fluid>
         <router-view />
       </v-container>
