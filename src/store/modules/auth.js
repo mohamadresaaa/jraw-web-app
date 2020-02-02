@@ -46,7 +46,7 @@ export default {
         })
     },
     logout ({ commit }) {
-      http.get("/api/v1/user/logout")
+      http.get("/api/v1/auth/logout")
         .then(({ data: { message } }) => {
           // Clear data of state
           commit("setAuthUser", null)
