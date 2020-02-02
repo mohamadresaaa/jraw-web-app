@@ -48,7 +48,7 @@
         <p class="font-weight-light grey--text">if you want to change your username, press the button</p>
         <!-- disable Account form -->
         <v-form v-if="showDisableAccount" v-model="isFormValid" lazy-validation ref="form"
-          @submit.prevent="">
+          @submit.prevent="submitDeactivateAccount()">
           <!-- password field -->
           <v-flex xs12 sm12 md6 class="mt-3">
             <v-text-field v-model="password" :rules="passwordRules" placeholder="Password" filled dense></v-text-field>
@@ -130,6 +130,13 @@ export default {
     },
     hiddenUsername () {
       this.changeUsername = false
+    },
+    submitDeactivateAccount () {
+      if (this.$refs.form.validate()) {
+        this.$store.dispatch("account/deactivation", {
+          password: this.password
+        })
+      }
     }
   }
 }
