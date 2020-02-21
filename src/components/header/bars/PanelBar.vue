@@ -44,7 +44,7 @@ import ToolsListItem from "../listItems/ToolsListItem"
 
 export default {
   data: () => ({
-    drawer: true,
+    drawer: false,
     menu: false
   }),
   computed: {
