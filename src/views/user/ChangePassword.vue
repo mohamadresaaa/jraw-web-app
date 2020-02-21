@@ -53,11 +53,6 @@ export default {
           "Passwords must match"
       ]
     }
-  },
-  methods: {
-    test () {
-      console.log(window.document)
-    }
   }
 }
 
