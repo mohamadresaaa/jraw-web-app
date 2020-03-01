@@ -17,7 +17,7 @@
     </v-navigation-drawer>
     <v-toolbar color="rgba(45,45,45,0.98)" dense>
       <!-- navbar icon button -->
-      <v-app-bar-nav-icon v-if="$vuetify.breakpoint.mdAndDown" @click="drawer = !drawer"></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon v-if="$vuetify.breakpoint.mdAndDown" @click="drawer = !drawer" color="white"></v-app-bar-nav-icon>
 
       <v-toolbar-title class="headline text-uppercase mr-5">
         <router-link :to="{ name: 'home' }" class="white--text">
