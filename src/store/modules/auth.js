@@ -17,7 +17,7 @@ export default {
   },
   actions: {
     register ({ commit }, data) {
-      return http.post("/api/v1/auth/register", data)
+      return http.post("/auth/register", data)
         .then(({ data: { message } }) => {
           // Go to sign in page
           router.push({ name: "sign_in" })
@@ -30,7 +30,7 @@ export default {
         })
     },
     login ({ commit }, data) {
-      return http.post("/api/v1/auth/login", data)
+      return http.post("/auth/login", data)
         .then(({ data: { properties } }) => {
           // Set token in localStorage
           localStorage.setItem("access-jraw", properties.token)
@@ -46,7 +46,7 @@ export default {
         })
     },
     logout ({ commit }) {
-      http.get("/api/v1/auth/logout")
+      http.get("/auth/logout")
         .then(({ data: { message } }) => {
           // Clear data of state
           commit("setAuthUser", null)
@@ -68,7 +68,7 @@ export default {
         })
     },
     passwordRecovery ({ commit }, data) {
-      return http.post("/api/v1/auth/passwordRecovery", data)
+      return http.post("/auth/passwordRecovery", data)
         .then(({ data: { message } }) => {
           // Set message state
           commit("setMainState", { resource: "message", item: { content: message, color: "blue" } }, { root: true })
@@ -78,7 +78,7 @@ export default {
         })
     },
     validationCode ({ commit }, code) {
-      return http.get(`/api/v1/auth/verifyCode/${code}`)
+      return http.get(`/auth/verifyCode/${code}`)
         .then(({ data: { properties } }) => (properties.email))
         .catch(({ response: { data: { message } } }) => {
           // Go to reset password page
@@ -89,7 +89,7 @@ export default {
         })
     },
     resetPassword ({ commit }, data) {
-      return http.post("/api/v1/auth/resetPassword", data)
+      return http.post("/auth/resetPassword", data)
         .then(({ data: { message } }) => {
           // Go to sign in page
           router.push({ name: "sign_in" })
@@ -112,7 +112,7 @@ export default {
         }
 
         // Otherwise
-        return http.get("/api/v1/user")
+        return http.get("/user")
           .then(({ data: { properties } }) => {
             // Set data of user in state
             commit("setAuthUser", properties.user)

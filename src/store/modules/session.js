@@ -10,7 +10,7 @@ export default {
     fetchSessions ({ state, commit }) {
       // Clear session
       commit("setItems", { resource: "session", items: [] }, { root: true })
-      return http.get("/api/v1/user/sessions")
+      return http.get("/user/sessions")
         .then(({ data: { properties } }) => {
           // Set sessions
           commit("setItems", { resource: "session", items: properties.sessions }, { root: true })
@@ -23,7 +23,7 @@ export default {
         })
     },
     deleteSession ({ state, commit }, item) {
-      return http.delete(`/api/v1/user/sessions/${item._id}`)
+      return http.delete(`/user/sessions/${item._id}`)
         .then(({ data: { message } }) => {
           // Find index
           let index = state.items.indexOf(item)

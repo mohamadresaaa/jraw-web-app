@@ -5,7 +5,7 @@ export default {
   namespaced: true,
   actions: {
     activation ({ commit }, code) {
-      return http.get(`/api/v1/account/activation/${code}`)
+      return http.get(`/account/activation/${code}`)
         .then(({ data: { message } }) => {
           // Set message state
           commit("setMainState", { resource: "message", item: { content: message, color: "green" } }, { root: true })
@@ -16,7 +16,7 @@ export default {
         .catch(() => router.push({ name: "home" }))
     },
     deactivation ({ commit }, data) {
-      return http.post("/api/v1/account/deactivation", data)
+      return http.post("/account/deactivation", data)
         .then(({ data: { message } }) => {
           // Clear data of state
           commit("auth/setAuthUser", null, { root: true })
@@ -38,7 +38,7 @@ export default {
         })
     },
     reactivation ({ commit }, data) {
-      return http.post("/api/v1/account/reactivation", data)
+      return http.post("/account/reactivation", data)
         .then(({ data: { message } }) => {
           // Set message state
           commit("setMainState", { resource: "message", item: { content: message, color: "green" } }, { root: true })
