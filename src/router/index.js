@@ -74,42 +74,66 @@ const routes = [
       {
         path: "panel",
         name: "user_panel",
-        component: () => import("../views/user/Profile.vue")
+        component: () => import("../views/user/Profile.vue"),
+        meta: {
+          onlyUsers: true
+        }
       },
       {
         path: "change_password",
         name: "change_password",
-        component: () => import("../views/user/ChangePassword.vue")
+        component: () => import("../views/user/ChangePassword.vue"),
+        meta: {
+          onlyUsers: true
+        }
       },
       {
         path: "edit_profile",
         name: "edit_profile",
-        component: () => import("../views/user/EditProfile.vue")
+        component: () => import("../views/user/EditProfile.vue"),
+        meta: {
+          onlyUsers: true
+        }
       },
       {
         path: "account",
         name: "account",
-        component: () => import("../views/user/Account.vue")
+        component: () => import("../views/user/Account.vue"),
+        meta: {
+          onlyUsers: true
+        }
       },
       {
         path: "notes",
         name: "notes",
-        component: () => import("../views/user/Notes.vue")
+        component: () => import("../views/user/Notes.vue"),
+        meta: {
+          onlyUsers: true
+        }
       },
       {
         path: "posts",
         name: "posts",
-        component: () => import("../views/user/Posts.vue")
+        component: () => import("../views/user/Posts.vue"),
+        meta: {
+          onlyUsers: true
+        }
       },
       {
         path: "contacts",
         name: "contacts",
-        component: () => import("../views/user/Contacts.vue")
+        component: () => import("../views/user/Contacts.vue"),
+        meta: {
+          onlyUsers: true
+        }
       },
       {
         path: "sessions",
         name: "sessions",
-        component: () => import("../views/user/Sessions.vue")
+        component: () => import("../views/user/Sessions.vue"),
+        meta: {
+          onlyUsers: true
+        }
       },
       {
         path: "events",
@@ -119,6 +143,9 @@ const routes = [
           title: "Coming soon...",
           message: "The event feature will soon be added to the jraw",
           color: "primary"
+        },
+        meta: {
+          onlyUsers: true
         }
       }
     ]

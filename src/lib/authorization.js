@@ -10,7 +10,7 @@ export const getUser = (to, from, next) => {
           next()
         } else {
           next({
-            name: "home"
+            name: "sign_in"
           })
         }
       } else {
