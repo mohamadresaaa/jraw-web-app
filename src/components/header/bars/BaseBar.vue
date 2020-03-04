@@ -38,7 +38,7 @@
         <v-btn @click="pushRoute('sign_up')" class="mr-2 text-capitalize hidden-sm-and-down white--text" text small>
           <span>Sign up</span>
         </v-btn>
-        <v-btn @click="pushRoute('sign_in')" class="text-capitalize" small>
+        <v-btn @click="pushRoute('sign_in')" class="text-capitalize" small light>
           <span>Sign in</span>
         </v-btn>
       </div>
