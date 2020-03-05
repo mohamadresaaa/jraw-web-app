@@ -34,7 +34,7 @@
                 </li>
                 <li>
                   <div class="body-2 grey--text"><span>join at:</span> <span
-                      class="blue-grey--text font-weight-bold">{{ item.createdAt }}</span></div>
+                      class="blue-grey--text font-weight-bold">{{ relativeTime(item.createdAt) }}</span></div>
                 </li>
               </ul>
             </v-flex>
@@ -53,6 +53,7 @@
 
 <script>
 import { mapGetters, mapState } from "vuex"
+import { relativeTime } from "../../lib/dateTime"
 
 export default {
   computed: {
@@ -76,7 +77,8 @@ export default {
     },
     deleteItem (item) {
       this.$store.dispatch("session/deleteSession", item)
-    }
+    },
+    relativeTime
   }
 }
 
