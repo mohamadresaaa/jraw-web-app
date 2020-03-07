@@ -70,7 +70,10 @@ export default {
       switch (os) {
         case "macOs" || "iOS":
           return "fab fa-apple"
-
+        case "Windows":
+          return "fab fa-windows"
+        case "Android":
+          return "fab fa-android"
         default:
           return "fas fa-question"
       }
