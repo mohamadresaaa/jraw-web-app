@@ -179,6 +179,11 @@ const routes = [
         path: "user_reports",
         name: "user_reports",
         component: () => import("../views/admin/reports/UserReports.vue")
+      },
+      {
+        path: "sms",
+        name: "sms",
+        component: () => import("../views/admin/Sms.vue")
       }
     ]
   },

@@ -107,7 +107,6 @@
     overflow: hidden;
     text-overflow: ellipsis;
   }
-
 </style>
 
 <script>
