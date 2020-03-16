@@ -35,11 +35,9 @@
         <v-flex xs12 sm12 md12>
           <v-layout wrap>
             <v-flex xs12 sm12 md12>
-              <v-card-title>
-                <h3 class="font-weight-medium text-capitalize ma-3">last articles</h3>
-              </v-card-title>
+              <h2 class="font-weight-medium text-capitalize mt-6 ml-4">last articles</h2>
             </v-flex>
-            <v-flex v-for="(item, index) in 8" :key="index" xs12 sm12 md4>
+            <v-flex v-for="(item, index) in 8" :key="index" xs12 sm6 md4>
               <v-card class="ma-4" outlined>
                 <v-list-item>
                   <v-list-item-avatar color="grey"></v-list-item-avatar>
