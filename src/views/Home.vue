@@ -6,7 +6,7 @@
           <v-carousel cycle :height="`${$vuetify.breakpoint.lgAndUp ? '500' : '300'}`" hide-delimiter-background
             show-arrows-on-hover>
             <v-carousel-item v-for="(slide, i) in slides" :key="i" :src="slide.image">
-              <v-sheet tile color="gray">
+              <v-sheet tile color="grey darken-3">
                 <v-row style="height:170%" align="center" justify="center">
                   <div class="title pa-4">{{ slide.title }}</div>
                 </v-row>
