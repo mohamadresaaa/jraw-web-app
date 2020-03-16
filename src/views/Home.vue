@@ -40,10 +40,13 @@
             <v-flex v-for="(item, index) in 8" :key="index" xs12 sm6 md4>
               <v-card class="ma-4" outlined>
                 <v-list-item>
-                  <v-list-item-avatar color="grey"></v-list-item-avatar>
+                  <v-list-item-avatar color="grey">
+                    <v-img class="elevation-6" src="https://avatars3.githubusercontent.com/u/41260098?s=460&v=4">
+                    </v-img>
+                  </v-list-item-avatar>
                   <v-list-item-content>
-                    <v-list-item-title class="headline">Our Changing Planet</v-list-item-title>
-                    <v-list-item-subtitle>by Kurt Wagner</v-list-item-subtitle>
+                    <v-list-item-title class="headline">Our Changing Planet Our Changing Planet</v-list-item-title>
+                    <v-list-item-subtitle>By mohamadresaaa</v-list-item-subtitle>
                   </v-list-item-content>
                 </v-list-item>
 
@@ -51,18 +54,22 @@
 
                 <v-card-text>
                   Visit ten places on our planet that are undergoing the biggest changes today.
+                  Visit ten places on our planet that are undergoing the biggest changes today.
                 </v-card-text>
 
                 <v-card-actions>
-                  <v-btn text color="deep-purple accent-4">
-                    Read
-                  </v-btn>
-                  <v-btn text color="deep-purple accent-4">
-                    Bookmark
-                  </v-btn>
+                  <v-chip color="green accent-4" label>
+                    nodejs
+                  </v-chip>
+                  <!-- <v-btn outlined color="deep-purple accent-4">
+                    nodejs
+                  </v-btn> -->
                   <v-spacer></v-spacer>
                   <v-btn icon>
                     <v-icon>favorite</v-icon>
+                  </v-btn>
+                  <v-btn icon>
+                    <v-icon>bookmark</v-icon>
                   </v-btn>
                   <v-btn icon>
                     <v-icon>share</v-icon>
@@ -78,7 +85,9 @@
 </template>
 
 <script>
-import { mapState } from "vuex"
+import {
+  mapState
+} from "vuex"
 
 export default {
   data () {
@@ -90,19 +99,18 @@ export default {
         "red lighten-1",
         "deep-purple accent-4"
       ],
-      slides: [
-        {
-          title: "An Introduction to Web Scraping with Puppeteer.",
-          image: "https://bs-uploads.toptal.io/blackfish-uploads/blog/article/content/cover_image_file/cover_image/17622/cover-REDESIGN-WebpackDependencies-Luke_Newsletter-627dfc180ba09f35679c9029e6b52001.png"
-        },
-        {
-          title: "How to create a real-world Node CLI app with Node",
-          image: "https://cdn-media-1.freecodecamp.org/images/0*2mHsgB-JH_yxlRev.png"
-        },
-        {
-          title: "Introduction to Webpack",
-          image: "https://bs-uploads.toptal.io/blackfish-uploads/blog/article/content/cover_image_file/cover_image/17622/cover-REDESIGN-WebpackDependencies-Luke_Newsletter-627dfc180ba09f35679c9029e6b52001.png"
-        }
+      slides: [{
+        title: "An Introduction to Web Scraping with Puppeteer.",
+        image: "https://bs-uploads.toptal.io/blackfish-uploads/blog/article/content/cover_image_file/cover_image/17622/cover-REDESIGN-WebpackDependencies-Luke_Newsletter-627dfc180ba09f35679c9029e6b52001.png"
+      },
+      {
+        title: "How to create a real-world Node CLI app with Node",
+        image: "https://cdn-media-1.freecodecamp.org/images/0*2mHsgB-JH_yxlRev.png"
+      },
+      {
+        title: "Introduction to Webpack",
+        image: "https://bs-uploads.toptal.io/blackfish-uploads/blog/article/content/cover_image_file/cover_image/17622/cover-REDESIGN-WebpackDependencies-Luke_Newsletter-627dfc180ba09f35679c9029e6b52001.png"
+      }
       ]
     }
   },
@@ -115,4 +123,5 @@ export default {
     this.$store.dispatch("category/fetchCategories")
   }
 }
+
 </script>
