@@ -10,29 +10,34 @@ const routes = [
   {
     path: "/",
     name: "home",
-    component: () => import("../views/layout/Base.vue"),
-    redirect: "/home",
-    children: [
-      {
-        path: "home",
-        component: Home
-      },
-      {
-        path: "about",
-        name: "about",
-        component: StatusPage,
-        props: {
-          title: "Oops!",
-          message: "We can't find the page you're looking for.Try searching our posts"
-        }
-      },
-      {
-        path: "contact",
-        name: "contact",
-        component: () => import("../views/Contact.vue")
-      }
-    ]
+    component: Home
   },
+  // {
+  //   path: "/fkjdkfjkd",
+  //   name: "home",
+  //   component: () => import("../views/layout/Base.vue"),
+  //   redirect: "/home",
+  //   children: [
+  //     {
+  //       path: "home",
+  //       component: Home
+  //     },
+  //     {
+  //       path: "about",
+  //       name: "about",
+  //       component: StatusPage,
+  //       props: {
+  //         title: "Oops!",
+  //         message: "We can't find the page you're looking for.Try searching our posts"
+  //       }
+  //     },
+  //     {
+  //       path: "contact",
+  //       name: "contact",
+  //       component: () => import("../views/Contact.vue")
+  //     }
+  //   ]
+  // },
   {
     path: "/auth",
     component: () => import("../views/layout/Auth.vue"),

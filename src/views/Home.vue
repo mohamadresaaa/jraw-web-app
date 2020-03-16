@@ -1,5 +1,7 @@
 <template>
-  <v-card elevation="0">
+  <v-app>
+    <BaseBar />
+    <v-card elevation="0">
     <v-container>
       <v-layout wrap>
         <v-flex xs12 sm12 md12>
@@ -82,12 +84,12 @@
       </v-layout>
     </v-container>
   </v-card>
+  </v-app>
 </template>
 
 <script>
-import {
-  mapState
-} from "vuex"
+import BaseBar from "../components/header/bars/BaseBar"
+import { mapState } from "vuex"
 
 export default {
   data () {
@@ -121,6 +123,9 @@ export default {
   },
   created () {
     this.$store.dispatch("category/fetchCategories")
+  },
+  components: {
+    BaseBar
   }
 }
 
