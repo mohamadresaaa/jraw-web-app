@@ -1,5 +1,7 @@
 <template>
-    <v-layout wrap>
+<v-app>
+    <BaseBar />
+<v-layout wrap>
         <v-flex xs12 sm12 md12 class="pa-2">
             <v-card>
                 <v-img src="https://image.freepik.com/free-photo/call-center-operators_53419-1461.jpg" :height="$vuetify.breakpoint.mdAndUp ? '470px' : '295px'">
@@ -47,9 +49,12 @@
             </v-card>
         </v-flex>
     </v-layout>
+  </v-app>
 </template>
 
 <script>
+import BaseBar from "../components/header/bars/BaseBar"
+
 export default {
   data () {
     return {
@@ -59,6 +64,9 @@ export default {
       subject: "",
       message: ""
     }
+  },
+  components: {
+    BaseBar
   }
 }
 </script>
