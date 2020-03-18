@@ -19,7 +19,7 @@
             <v-toolbar flat>
               <v-text-field class="mt-6" label="Search..." clearable solo-inverted dense></v-text-field>
               <v-spacer></v-spacer>
-              <v-select class="mt-6 mx-2" label="Filter" dense outlined></v-select>
+              <v-select :items="items" class="mt-6 mx-2" label="Filter" dense outlined></v-select>
               <v-dialog v-model="dialog" max-width="500px">
                 <v-card>
                   <v-card-title>
@@ -116,11 +116,11 @@ import {
 export default {
   data () {
     return {
+      items: ["Foo", "Bar", "Fizz", "Buzz"],
       activator: null,
       attach: null,
       editing: null,
       index: -1,
-      items: [],
       menu: false,
       model: [],
       x: 0,
