@@ -165,9 +165,9 @@ const routes = [
         component: () => import("../views/admin/reports/UserReports.vue")
       },
       {
-        path: "sms",
-        name: "sms",
-        component: () => import("../views/admin/Sms.vue")
+        path: "mail",
+        name: "mail",
+        component: () => import("../views/admin/Mail.vue")
       },
       {
         path: "analytics",

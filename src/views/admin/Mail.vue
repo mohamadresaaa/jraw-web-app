@@ -4,8 +4,7 @@
       <!-- title -->
       <v-flex xs12 sm12 md12>
         <v-card-title class="px-0 mx-0 mb-4">
-          <h3 class="font-weight-medium text-capitalize">
-            {{$vuetify.breakpoint.smAndDown ? "sms service".slice(0,3) : "sms service" }}</h3>
+          <h3 class="font-weight-medium text-capitalize">Mail</h3>
           <v-spacer></v-spacer>
           <v-chip class="text-capitalize" label>
             <v-icon left>event</v-icon> {{ relativeTime(new Date(1614777557 * 1000)) }}
@@ -17,13 +16,11 @@
       <v-flex xs12 sm12 md12>
         <v-data-table :headers="headers" :items="desserts" class="elevation-1">
           <template v-slot:top>
-            <v-toolbar flat color="white">
-              <v-toolbar-title>Messages</v-toolbar-title>
+            <v-toolbar flat>
+              <v-text-field class="mt-6" label="Search..." clearable solo-inverted dense></v-text-field>
               <v-spacer></v-spacer>
+              <v-select class="mt-6 mx-2" label="Filter" dense outlined></v-select>
               <v-dialog v-model="dialog" max-width="500px">
-                <template v-slot:activator="{ on }">
-                  <v-btn color="primary" dark class="mb-2" v-on="on">send sms</v-btn>
-                </template>
                 <v-card>
                   <v-card-title>
                     <span class="headline">Send message</span>
@@ -101,11 +98,20 @@
         </v-data-table>
       </v-flex>
     </v-layout>
+    <v-speed-dial v-model="dialog" :bottom="true" :right="true" fixed>
+        <template v-slot:activator>
+          <v-btn v-model="dialog" color="blue darken-2" dark fab>
+            <v-icon>send</v-icon>
+          </v-btn>
+        </template>
+      </v-speed-dial>
   </v-container>
 </template>
 
 <script>
-import { relativeTime } from "../../lib/dateTime"
+import {
+  relativeTime
+} from "../../lib/dateTime"
 
 export default {
   data () {
