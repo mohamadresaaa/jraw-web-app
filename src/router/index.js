@@ -168,6 +168,11 @@ const routes = [
         path: "sms",
         name: "sms",
         component: () => import("../views/admin/Sms.vue")
+      },
+      {
+        path: "analytics",
+        name: "analytics",
+        component: () => import("../views/admin/Analytics.vue")
       }
     ]
   },
