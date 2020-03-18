@@ -39,8 +39,8 @@
 <script>
 import { mapGetters } from "vuex"
 import UserMenu from "../../header/UserMenu"
-import UserListItem from "../listItems/UserListItem"
-import ToolsListItem from "../listItems/ToolsListItem"
+import UserListItem from "../../listItems/UserListItem"
+import ToolsListItem from "../../listItems/ToolsListItem"
 
 export default {
   data: () => ({
